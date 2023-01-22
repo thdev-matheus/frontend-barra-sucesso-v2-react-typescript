@@ -1,5 +1,6 @@
 import * as T from "./types";
+import { DarkModeProvider } from "./DarkMode";
 
 export const Contexts = ({ children }: T.IContextProps) => {
-  return <>{children}</>;
+  return <DarkModeProvider>{children}</DarkModeProvider>;
 };
