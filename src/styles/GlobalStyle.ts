@@ -25,5 +25,9 @@ export const GlobalStyle = createGlobalStyle`
     
     font-weight: normal;
 
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
  }
 `;

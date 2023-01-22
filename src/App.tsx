@@ -2,7 +2,7 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./Routes";
 
 import { ThemeProvider } from "styled-components";
-import * as theme from "./styles/Themes";
+import * as theme from "./Styles/Themes";
 
 export const App = () => {
   return (

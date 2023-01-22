@@ -1,7 +1,10 @@
+import * as S from "./styles";
+import * as B from "../../Blocks";
+
 export const HomePage = () => {
   return (
-    <>
-      <h1>HomePage</h1>
-    </>
+    <S.Container>
+      <B.HeaderBlock />
+    </S.Container>
   );
 };
