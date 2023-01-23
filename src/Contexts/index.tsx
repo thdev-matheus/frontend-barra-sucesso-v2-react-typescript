@@ -1,6 +1,12 @@
 import * as T from "./types";
+
 import { DarkModeProvider } from "./DarkMode";
+import { MediaQueryProvider } from "./MediaQuery";
 
 export const Contexts = ({ children }: T.IContextProps) => {
-  return <DarkModeProvider>{children}</DarkModeProvider>;
+  return (
+    <MediaQueryProvider>
+      <DarkModeProvider>{children}</DarkModeProvider>
+    </MediaQueryProvider>
+  );
 };
