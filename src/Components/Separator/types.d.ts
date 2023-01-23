@@ -4,6 +4,8 @@ export interface ISeparatorProps {
   width?: string;
   height?: string;
 
+  zIndex?: number;
+
   bgColor?: string;
 
   children?: ReactNode;
@@ -12,6 +14,8 @@ export interface ISeparatorProps {
 export interface IContainerProps {
   width?: string;
   height?: string;
+
+  zIndex?: number;
 
   bgColor?: string;
 }

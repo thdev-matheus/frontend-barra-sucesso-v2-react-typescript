@@ -7,6 +7,7 @@ export const Container = styled.section<T.IContainerProps>`
 
   position: relative;
   top: 0;
+  z-index: ${(props) => props.zIndex || 9999};
 
   background-color: ${(props) =>
     props.bgColor || props.theme.backgroundPrimary};

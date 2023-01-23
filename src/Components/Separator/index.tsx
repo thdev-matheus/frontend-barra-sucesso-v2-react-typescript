@@ -6,6 +6,7 @@ export const Separator = ({
   height,
   identifier,
   width = "100vw",
+  zIndex,
   children,
 }: T.ISeparatorProps) => {
   return (
@@ -14,6 +15,7 @@ export const Separator = ({
       bgColor={bgColor}
       height={height}
       width={width}
+      zIndex={zIndex}
     >
       {children}
     </S.Container>

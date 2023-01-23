@@ -48,20 +48,22 @@ export const BoxTitle = styled.div`
 
     text-align: center;
 
-    & > h2 {
-      font-size: 20pt;
-      font-weight: bold;
+    & > div {
+      & > h2 {
+        font-size: 20pt;
+        font-weight: bold;
 
-      color: ${(props) => props.theme.textPrimary};
-    }
+        color: ${(props) => props.theme.textPrimary};
+      }
 
-    & > span {
-      font-size: 10pt;
-      font-weight: bold;
+      & > span {
+        font-size: 10pt;
+        font-weight: bold;
 
-      text-transform: uppercase;
+        text-transform: uppercase;
 
-      color: ${(props) => props.theme.primary};
+        color: ${(props) => props.theme.primary};
+      }
     }
   }
 
@@ -84,10 +86,12 @@ export const BoxBody = styled.div`
 
     text-align: center;
 
-    & > p {
-      font-size: 12pt;
+    & > div {
+      & > p {
+        font-size: 12pt;
 
-      color: ${(props) => props.theme.textPrimary};
+        color: ${(props) => props.theme.textPrimary};
+      }
     }
   }
 
@@ -108,6 +112,11 @@ export const BoxButton = styled.div`
   @media (min-width: 1024px) {
     width: 10rem;
     height: 3rem;
+
+    & > div {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   @media (min-width: 1440px) {
