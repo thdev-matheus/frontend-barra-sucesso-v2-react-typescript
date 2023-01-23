@@ -1,5 +1,8 @@
 import { useDarkMode } from "../../Contexts/DarkMode";
+import { FaWpforms } from "react-icons/fa";
+
 import * as S from "./styles";
+import * as C from "../../Components";
 
 export const HeaderBlock = () => {
   const { isDarkMode } = useDarkMode();
@@ -23,7 +26,19 @@ export const HeaderBlock = () => {
         <li>Sobre o App</li>
       </S.BoxMenuDesktop>
 
-      <S.BoxButton></S.BoxButton>
+      <S.BoxButton>
+        <C.Button
+          label="/Pergunta"
+          onAction={() => {}}
+          icon={FaWpforms}
+          width="80%"
+          height="2.5rem"
+          iconAfter={true}
+          iconSize="1rem"
+          fontSize="11pt"
+          radius="1.5rem"
+        />
+      </S.BoxButton>
 
       <S.BoxTheme></S.BoxTheme>
     </S.Container>

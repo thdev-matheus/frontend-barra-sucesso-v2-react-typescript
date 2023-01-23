@@ -90,7 +90,7 @@ export const BoxMenuDesktop = styled.ul`
     & > li {
       list-style: none;
 
-      font-size: 14pt;
+      font-size: 12pt;
       font-weight: bold;
 
       color: ${(props) => props.theme.white};
