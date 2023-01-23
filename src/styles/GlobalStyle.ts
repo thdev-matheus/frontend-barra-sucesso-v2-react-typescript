@@ -24,6 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     overflow: hidden auto;
     
     font-weight: normal;
+    font-family: "Roboto";
 
     ::-webkit-scrollbar {
       display: none;

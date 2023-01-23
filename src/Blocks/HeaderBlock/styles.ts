@@ -45,8 +45,8 @@ export const BoxLogo = styled.div`
     border: 1px solid red;
 
     & > img {
-      width: 80%;
-      height: auto;
+      width: auto;
+      height: 80%;
 
       cursor: pointer;
 
@@ -81,12 +81,32 @@ export const BoxMenuDesktop = styled.ul`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 
-    margin: 0;
-    padding: 0;
+    padding-left: 1rem;
 
     border: 1px solid magenta;
+
+    & > li {
+      list-style: none;
+
+      font-size: 14pt;
+      font-weight: bold;
+
+      color: ${(props) => props.theme.white};
+
+      cursor: pointer;
+
+      transition: 0.5s;
+
+      :hover {
+        transform: scale(0.9);
+
+        color: ${(props) => props.theme.tertiary};
+
+        transition: 0.5s;
+      }
+    }
   }
 
   @media (min-width: 1440px) {
