@@ -17,11 +17,11 @@ export const LightTheme = {
 
   textPrimary: "#2c3e50",
   textSecondary: "#222f3e",
-  textTertiary: "#303952",
+  textTertiary: "#f7f1e3",
 
   backgroundPrimary: "#ecf0f1",
   backgroundSecondary: "#dfe4ea",
-  backgroundTertiary: "#f7f1e3",
+  backgroundTertiary: "#303952",
 };
 
 export const DarkTheme = {
@@ -47,5 +47,5 @@ export const DarkTheme = {
 
   backgroundPrimary: "#2c3e50",
   backgroundSecondary: "#222f3e",
-  backgroundTertiary: "#303952",
+  backgroundTertiary: "#283436",
 };

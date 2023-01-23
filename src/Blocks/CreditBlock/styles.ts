@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import * as T from "./types";
 
-export const Container = styled.section`
+export const Container = styled.section<T.IContainerProps>`
   @media (min-width: 320px) {
   }
 

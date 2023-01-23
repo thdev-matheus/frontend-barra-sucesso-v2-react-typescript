@@ -12,7 +12,12 @@ export const WelcomeBlock = () => {
 
   return (
     <>
-      <C.Separator height="5rem" bgColor="transparent" zIndex={10} />
+      <C.Separator
+        identifier="welcome"
+        height="5rem"
+        bgColor="transparent"
+        zIndex={10}
+      />
       <S.Container>
         <S.BoxTitle>
           <motion.div
