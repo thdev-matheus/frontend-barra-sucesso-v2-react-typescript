@@ -16,7 +16,7 @@ export const Container = styled.section`
     justify-content: flex-start;
     align-items: center;
 
-    overflow: hidden auto;
+    overflow: hidden scroll;
 
     scroll-behavior: smooth;
 

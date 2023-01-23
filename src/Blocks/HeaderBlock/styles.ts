@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.header`
   @media (min-width: 320px) {
   }
 
@@ -14,6 +14,10 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: absolute;
+    top: 0;
+    z-index: 9000;
 
     padding: 0.5rem 10%;
 

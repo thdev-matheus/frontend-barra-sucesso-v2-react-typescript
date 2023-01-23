@@ -30,7 +30,7 @@ export const SButton = styled.button<T.ISButtonProps>`
 
   :hover {
     color: ${(props) => props.hColor || props.theme.white};
-    background-color: ${(props) => props.bgColor || props.theme.secondary};
+    background-color: ${(props) => props.hBgColor || props.theme.secondary};
 
     transition: 0.5s;
   }

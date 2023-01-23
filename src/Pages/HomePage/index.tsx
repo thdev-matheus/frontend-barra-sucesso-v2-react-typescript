@@ -5,6 +5,7 @@ export const HomePage = () => {
   return (
     <S.Container>
       <B.HeaderBlock />
+      <B.WelcomeBlock />
     </S.Container>
   );
 };

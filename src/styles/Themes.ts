@@ -11,7 +11,7 @@ export const LightTheme = {
   gray: "#7f8c8d",
   white: "#ecf0f1",
 
-  transparentBlack: "#2d3436dd",
+  transparentBlack: "#2c3e50ee",
   transparentGray: "#7f8c8d85",
   transparentWhite: "#ecf0f185",
 
