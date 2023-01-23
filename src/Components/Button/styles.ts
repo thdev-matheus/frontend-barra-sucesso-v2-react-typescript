@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import * as T from "./types";
 
-export const SButton = styled.div<T.ISButtonProps>`
+export const SButton = styled.button<T.ISButtonProps>`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "100%"};
 

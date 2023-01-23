@@ -9,7 +9,7 @@ export const Container = styled.section`
 
   @media (min-width: 1024px) {
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -17,6 +17,8 @@ export const Container = styled.section`
     align-items: center;
 
     overflow: hidden auto;
+
+    scroll-behavior: smooth;
 
     background-color: ${(props) => props.theme.backgroundPrimary};
   }

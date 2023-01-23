@@ -10,6 +10,10 @@ export const GlobalStyle = createGlobalStyle`
 
     box-sizing: border-box;
     box-shadow: 0 0 0 0;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
 }
 
   body {
@@ -23,12 +27,10 @@ export const GlobalStyle = createGlobalStyle`
 
     overflow: hidden auto;
     
-    font-weight: normal;
     font-family: "Roboto";
+    font-weight: normal;
 
-    ::-webkit-scrollbar {
-      display: none;
-    }
+    
 
  }
 `;

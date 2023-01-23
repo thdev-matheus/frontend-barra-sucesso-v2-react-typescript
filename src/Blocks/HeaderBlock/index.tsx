@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 import { useDarkMode } from "../../Contexts/DarkMode";
 import { FaWpforms } from "react-icons/fa";
 
@@ -6,6 +7,7 @@ import * as C from "../../Components";
 
 export const HeaderBlock = () => {
   const { isDarkMode } = useDarkMode();
+
   return (
     <S.Container>
       <S.BoxLogo>
@@ -31,7 +33,7 @@ export const HeaderBlock = () => {
           label="/Pergunta"
           onAction={() => {}}
           icon={FaWpforms}
-          width="80%"
+          width="7.5rem"
           height="2.5rem"
           iconAfter={true}
           iconSize="1rem"
@@ -40,7 +42,9 @@ export const HeaderBlock = () => {
         />
       </S.BoxButton>
 
-      <S.BoxTheme></S.BoxTheme>
+      <S.BoxTheme>
+        <C.DarkModeToggle color={isDarkMode ? "#f1c40f" : "#ecf0f1"} />
+      </S.BoxTheme>
     </S.Container>
   );
 };

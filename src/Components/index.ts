@@ -1,3 +1,4 @@
 import { Button } from "./Button";
+import { DarkModeToggle } from "./DarkModeToggle";
 
-export { Button };
+export { Button, DarkModeToggle };

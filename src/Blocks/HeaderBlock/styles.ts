@@ -15,9 +15,9 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
-    padding: 0 10%;
+    padding: 0.5rem 10%;
 
-    background-color: ${(props) => props.theme.black};
+    background-color: ${(props) => props.theme.transparentBlack};
   }
 
   @media (min-width: 1440px) {
@@ -42,7 +42,7 @@ export const BoxLogo = styled.div`
     justify-content: center;
     align-items: center;
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     & > img {
       width: auto;
@@ -85,7 +85,7 @@ export const BoxMenuDesktop = styled.ul`
 
     padding-left: 1rem;
 
-    border: 1px solid magenta;
+    /* border: 1px solid magenta; */
 
     & > li {
       list-style: none;
@@ -131,7 +131,7 @@ export const BoxButton = styled.div`
     justify-content: center;
     align-items: center;
 
-    border: 1px solid cyan;
+    /* border: 1px solid cyan; */
   }
 
   @media (min-width: 1440px) {
@@ -156,7 +156,7 @@ export const BoxTheme = styled.div`
     justify-content: center;
     align-items: center;
 
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
   }
 
   @media (min-width: 1440px) {

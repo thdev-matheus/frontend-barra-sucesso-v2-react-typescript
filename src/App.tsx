@@ -3,10 +3,12 @@ import { router } from "./Routes";
 
 import { ThemeProvider } from "styled-components";
 import * as theme from "./Styles/Themes";
+import { useDarkMode } from "./Contexts";
 
 export const App = () => {
+  const { isDarkMode } = useDarkMode();
   return (
-    <ThemeProvider theme={theme.LightTheme}>
+    <ThemeProvider theme={isDarkMode ? theme.DarkTheme : theme.LightTheme}>
       <RouterProvider router={router} />
     </ThemeProvider>
   );
