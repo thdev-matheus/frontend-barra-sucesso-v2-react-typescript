@@ -6,6 +6,7 @@ export const HomePage = () => {
     <S.Container>
       <B.HeaderBlock />
       <B.WelcomeBlock />
+      <B.CreditBlock />
     </S.Container>
   );
 };
