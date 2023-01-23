@@ -88,7 +88,9 @@ export const BoxBody = styled.div`
 
     & > div {
       & > p {
-        font-size: 12pt;
+        margin-bottom: 0.5rem;
+
+        font-size: 10pt;
 
         color: ${(props) => props.theme.textPrimary};
       }

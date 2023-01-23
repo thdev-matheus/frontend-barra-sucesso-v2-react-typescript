@@ -76,10 +76,26 @@ export const WelcomeBlock = () => {
             }}
           >
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-              voluptates in neque. Quas, voluptatum? Asperiores voluptates
-              necessitatibus aperiam inventore magnam ut consequuntur. Id labore
-              cupiditate dolor maxime nesciunt incidunt consequatur?
+              Este é o lugar para você que tem dificuldades em elaborar o seu
+              /perguntas.
+            </p>
+            <p>
+              É importante você saber que o monitor/instrutor precisa entender
+              qual exatamente é o desafio que você está a enfrentar para que
+              possa se preparar adequadamente para te atender. Então preencha
+              todos os campos com atenção e de uma forma bem detalhada, pois
+              assim, conseguiremos estruturar o seu /pergunta de uma forma que o
+              monitor/instrutor vai ler e entender bem em que ponto precisará
+              intervir em sua dúvida.
+            </p>
+            <p>
+              Já aconteceu muitas vezes de, ao estruturar um /pergunta, o Dev
+              encontrar a resposta para a sua dúvida e dessa forma nem chegar a
+              precisar do atendimento.
+            </p>
+            <p>
+              Seja completamente sinceroa(a) e não tenha medo ou vergonha de
+              informar qual a sua real dificuldade.
             </p>
           </motion.div>
         </S.BoxBody>
