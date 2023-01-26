@@ -45,7 +45,17 @@ export const BoxLeft = styled.div`
     align-items: flex-end;
     gap: 1rem;
 
-    padding-right: 1rem;
+    & > section {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 1rem;
+
+      padding-right: 1rem;
+    }
   }
 
   @media (min-width: 1440px) {
@@ -164,23 +174,27 @@ export const BoxRight = styled.div`
     width: 40%;
     height: 100%;
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    & > div {
+      width: 100%;
+      height: 100%;
 
-    & > img {
-      height: 105%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      & > img {
+        height: 105%;
 
-      position: relative;
-      bottom: -2px;
+        position: relative;
+        bottom: -2px;
 
-      transition: 0.8s;
+        transition: 0.8s;
 
-      :hover {
-        transform: scale(1.1);
-        transform-origin: bottom;
+        :hover {
+          transform: scale(1.1);
+          transform-origin: bottom;
 
-        transition: 1.5s;
+          transition: 1.5s;
+        }
       }
     }
   }
