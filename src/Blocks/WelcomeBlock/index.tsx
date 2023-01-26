@@ -122,6 +122,7 @@ export const WelcomeBlock = () => {
               onAction={() => {}}
               icon={FiArrowRightCircle}
               iconAfter={true}
+              hColor={isDarkMode ? undefined : "#ecf0f1"}
               hBgColor={isDarkMode ? undefined : "#2c3e50"}
               radius="2rem"
             />

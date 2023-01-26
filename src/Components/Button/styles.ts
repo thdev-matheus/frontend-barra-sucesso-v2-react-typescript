@@ -29,10 +29,10 @@ export const SButton = styled.button<T.ISButtonProps>`
   }
 
   :hover {
-    color: ${(props) => props.hColor || props.theme.white};
-    background-color: ${(props) => props.hBgColor || props.theme.secondary};
+    color: ${(props) => props.hColor || props.theme.black};
+    background-color: ${(props) => props.hBgColor || props.theme.primary};
 
-    transition: 0.5s;
+    transition: 0.8s;
   }
 
   :active {
