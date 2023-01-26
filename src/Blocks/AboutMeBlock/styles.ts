@@ -16,7 +16,7 @@ export const Container = styled.section`
     justify-content: center;
     align-items: center;
 
-    overflow: hidden;
+    /* overflow: hidden; */
 
     background-color: ${(props) => props.theme.backgroundSecondary};
   }
@@ -62,15 +62,16 @@ export const BoxRight = styled.div`
 
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
 
     & > img {
-      height: 100%;
+      height: 120%;
 
       transition: 0.8s;
 
       :hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
+        transform-origin: bottom;
 
         transition: 1.5s;
       }

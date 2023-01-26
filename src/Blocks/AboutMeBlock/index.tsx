@@ -24,7 +24,7 @@ export const AboutMeBlock = () => {
         <p>Você pode saber um pouco mais sobre mim clicando no botão abaixo.</p>
       </S.BoxLeft>
       <S.BoxRight>
-        <img src="https://i.ibb.co/NsgKfky/me.png" alt="me" />
+        <img src="https://i.ibb.co/M7BrwtN/me.png" alt="me" />
       </S.BoxRight>
     </S.Container>
   );
