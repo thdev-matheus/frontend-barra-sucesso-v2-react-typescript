@@ -67,6 +67,9 @@ export const BoxRight = styled.div`
     & > img {
       height: 120%;
 
+      position: relative;
+      bottom: -2px;
+
       transition: 0.8s;
 
       :hover {
