@@ -5,9 +5,6 @@ export const Container = styled.section`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100vw;
     height: 100vh;
 
