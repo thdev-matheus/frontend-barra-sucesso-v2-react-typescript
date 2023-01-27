@@ -166,6 +166,12 @@ export const Links = styled.ul`
 
       transition: 0.5s;
 
+      & > a {
+        text-decoration: none;
+
+        color: ${(props) => props.theme.textTertiary};
+      }
+
       :hover {
         transform: scale(0.9);
 

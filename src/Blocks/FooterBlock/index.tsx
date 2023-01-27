@@ -57,10 +57,18 @@ export const FooterBlock = () => {
       <S.BoxLinks>
         <h2>Mapa da página</h2>
         <S.Links>
-          <li>Home</li>
-          <li>Sobre mim</li>
-          <li>Contato</li>
-          <li>Sobre o app</li>
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#aboutMe">Sobre mim</a>
+          </li>
+          <li>
+            <a href="#aboutApp">Sobre o app</a>
+          </li>
+          <li>
+            <a href="#contact">Contato</a>
+          </li>
         </S.Links>
       </S.BoxLinks>
 
