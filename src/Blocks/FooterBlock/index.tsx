@@ -11,9 +11,7 @@ import { useNavigate } from "react-router-dom";
 export const FooterBlock = () => {
   const navigate = useNavigate();
 
-  const goTo = (path: string) => {
-    navigate(path);
-  };
+  const goTo = (path: string) => navigate(path);
 
   return (
     <S.Container>
