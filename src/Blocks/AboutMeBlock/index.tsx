@@ -9,6 +9,27 @@ export const AboutMeBlock = () => {
   return (
     <S.Container id="aboutMe">
       <S.BoxLeft>
+        <motion.div
+          transition={{
+            duration: 1.2,
+            delay: 1,
+            type: "spring",
+            stiffness: 80,
+          }}
+          initial={{
+            opacity: 0,
+            x: 100,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+        >
+          <img src="https://i.ibb.co/hHkxmMZ/me.png" alt="me" />
+        </motion.div>
+      </S.BoxLeft>
+
+      <S.BoxRight>
         <motion.section
           transition={{
             duration: 1.2,
@@ -80,27 +101,6 @@ export const AboutMeBlock = () => {
             />
           </motion.div>
         </S.BoxButton>
-      </S.BoxLeft>
-
-      <S.BoxRight>
-        <motion.div
-          transition={{
-            duration: 1.2,
-            delay: 1,
-            type: "spring",
-            stiffness: 80,
-          }}
-          initial={{
-            opacity: 0,
-            x: 100,
-          }}
-          animate={{
-            opacity: 1,
-            x: 0,
-          }}
-        >
-          <img src="https://i.ibb.co/hHkxmMZ/me.png" alt="me" />
-        </motion.div>
       </S.BoxRight>
     </S.Container>
   );

@@ -65,7 +65,7 @@ export const FooterBlock = () => {
       </S.BoxLinks>
 
       <S.BoxButton>
-        <a href="#welcome">
+        <a href="#home">
           <div>
             <FiArrowUpCircle />
           </div>
