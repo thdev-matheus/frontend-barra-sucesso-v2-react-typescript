@@ -1,5 +1,4 @@
 import * as S from "./styles";
-import * as C from "../../Components";
 import {
   FiInstagram,
   FiTwitter,
@@ -7,8 +6,15 @@ import {
   FiGithub,
   FiArrowUpCircle,
 } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 export const FooterBlock = () => {
+  const navigate = useNavigate();
+
+  const goTo = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <S.Container>
       <S.BoxSocial>
@@ -48,25 +54,25 @@ export const FooterBlock = () => {
       <S.BoxLinks>
         <h2>Links Úteis</h2>
         <S.Links>
-          <li>Hall de devs</li>
-          <li>Sugestões</li>
-          <li>Contribua</li>
+          <li onClick={() => goTo("/dev-hall")}>Hall de devs</li>
+          <li onClick={() => goTo("/suggestions")}>Sugestões</li>
+          <li onClick={() => goTo("/contribute")}>Contribua</li>
         </S.Links>
       </S.BoxLinks>
 
       <S.BoxLinks>
         <h2>Mapa da página</h2>
         <S.Links>
-          <li>
+          <li onClick={() => goTo("/")}>
             <a href="#home">Home</a>
           </li>
-          <li>
+          <li onClick={() => goTo("/")}>
             <a href="#aboutMe">Sobre mim</a>
           </li>
-          <li>
+          <li onClick={() => goTo("/")}>
             <a href="#aboutApp">Sobre o app</a>
           </li>
-          <li>
+          <li onClick={() => goTo("/")}>
             <a href="#contact">Contato</a>
           </li>
         </S.Links>
