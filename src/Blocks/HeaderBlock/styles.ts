@@ -23,12 +23,6 @@ export const Container = styled.header`
 
     background-color: ${(props) => props.theme.transparentBlack};
   }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
-  }
 `;
 
 export const BoxLogo = styled.div`
@@ -46,8 +40,6 @@ export const BoxLogo = styled.div`
     justify-content: center;
     align-items: center;
 
-    /* border: 1px solid red; */
-
     & > img {
       width: auto;
       height: 80%;
@@ -64,10 +56,8 @@ export const BoxLogo = styled.div`
     }
   }
 
-  @media (min-width: 1440px) {
-  }
-
   @media (min-width: 1900px) {
+    width: calc(1.5 * (100% / 10));
   }
 `;
 
@@ -89,8 +79,6 @@ export const BoxMenuDesktop = styled.ul`
 
     padding-left: 1rem;
 
-    /* border: 1px solid magenta; */
-
     & > li {
       list-style: none;
 
@@ -103,6 +91,12 @@ export const BoxMenuDesktop = styled.ul`
 
       transition: 0.5s;
 
+      & > a {
+        text-decoration: none;
+
+        color: ${(props) => props.theme.white};
+      }
+
       :hover {
         transform: scale(0.9);
 
@@ -113,10 +107,16 @@ export const BoxMenuDesktop = styled.ul`
     }
   }
 
-  @media (min-width: 1440px) {
-  }
-
   @media (min-width: 1900px) {
+    width: calc(7.5 * (100% / 10));
+
+    gap: 2rem;
+
+    padding-left: 2rem;
+
+    & > li {
+      font-size: 16pt;
+    }
   }
 `;
 
@@ -134,14 +134,10 @@ export const BoxButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* border: 1px solid cyan; */
-  }
-
-  @media (min-width: 1440px) {
   }
 
   @media (min-width: 1900px) {
+    width: calc(1 * (100% / 10));
   }
 `;
 
@@ -159,13 +155,5 @@ export const BoxTheme = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* border: 1px solid yellow; */
-  }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
   }
 `;

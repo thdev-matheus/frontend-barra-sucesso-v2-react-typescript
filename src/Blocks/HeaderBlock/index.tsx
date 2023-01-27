@@ -1,12 +1,16 @@
 /* eslint-disable no-template-curly-in-string */
 import { useDarkMode } from "../../Contexts/DarkMode";
 import { FaWpforms } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 import * as S from "./styles";
 import * as C from "../../Components";
 
 export const HeaderBlock = () => {
   const { isDarkMode } = useDarkMode();
+  const navigate = useNavigate();
+
+  const goTo = (path: string) => navigate(path);
 
   return (
     <S.Container>
@@ -22,16 +26,24 @@ export const HeaderBlock = () => {
       </S.BoxLogo>
 
       <S.BoxMenuDesktop>
-        <li>Home</li>
-        <li>Sobre Mim</li>
-        <li>Contato</li>
-        <li>Sobre o App</li>
+        <li onClick={() => goTo("/")}>
+          <a href="#home">Home</a>
+        </li>
+        <li onClick={() => goTo("/")}>
+          <a href="#aboutMe">Sobre Mim</a>
+        </li>
+        <li onClick={() => goTo("/")}>
+          <a href="#aboutApp">Sobre o App</a>
+        </li>
+        <li onClick={() => goTo("/")}>
+          <a href="#contact">Contato</a>
+        </li>
       </S.BoxMenuDesktop>
 
       <S.BoxButton>
         <C.Button
           label="/Pergunta"
-          onAction={() => {}}
+          onAction={() => goTo("/form")}
           icon={FaWpforms}
           width="7.5rem"
           height="2.5rem"

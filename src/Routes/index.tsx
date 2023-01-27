@@ -27,4 +27,24 @@ export const router = createBrowserRouter([
     element: <P.AboutMePage />,
     errorElement: <P.ErrorPage />,
   },
+  {
+    path: "/about-app",
+    element: <P.AboutAppPage />,
+    errorElement: <P.ErrorPage />,
+  },
+  {
+    path: "/devs-hall",
+    element: <P.DevsHallPage />,
+    errorElement: <P.ErrorPage />,
+  },
+  {
+    path: "/suggestions",
+    element: <P.SuggestionsPage />,
+    errorElement: <P.ErrorPage />,
+  },
+  {
+    path: "/contribute",
+    element: <P.ContributePage />,
+    errorElement: <P.ErrorPage />,
+  },
 ]);

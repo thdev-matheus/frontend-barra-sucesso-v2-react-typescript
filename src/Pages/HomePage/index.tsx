@@ -6,7 +6,10 @@ export const HomePage = () => {
     <S.Container>
       <B.HeaderBlock />
       <B.WelcomeBlock />
-      <B.FooterBlock/>
+      <B.AboutMeBlock />
+      <B.AboutAppBlock />
+      <B.ContactBlock />
+      <B.FooterBlock />
       <B.CreditBlock />
     </S.Container>
   );
