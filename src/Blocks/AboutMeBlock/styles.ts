@@ -16,6 +16,8 @@ export const Container = styled.section`
     justify-content: center;
     align-items: center;
 
+    scroll-margin-top: 5rem;
+
     /* overflow: hidden; */
 
     background-color: ${(props) => props.theme.backgroundSecondary};

@@ -7,7 +7,7 @@ import { useDarkMode } from "../../Contexts";
 export const AboutMeBlock = () => {
   const { isDarkMode } = useDarkMode();
   return (
-    <S.Container>
+    <S.Container id="aboutMe">
       <S.BoxLeft>
         <motion.section
           transition={{

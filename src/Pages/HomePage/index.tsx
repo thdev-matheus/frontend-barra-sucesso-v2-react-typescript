@@ -7,6 +7,7 @@ export const HomePage = () => {
       <B.HeaderBlock />
       <B.WelcomeBlock />
       <B.AboutMeBlock />
+      <B.ContactBlock />
       <B.FooterBlock />
       <B.CreditBlock />
     </S.Container>
