@@ -19,7 +19,7 @@ export const Container = styled.section<T.IContainerProps>`
 
     scroll-margin-top: 5rem;
 
-    background-color: ${(props) => props.theme.backgroundPrimary};
+    background-color: ${(props) => props.theme.backgroundSecondary};
     background-image: url(${(props) => props.bgImg});
     background-position: center;
     background-repeat: no-repeat;
@@ -95,10 +95,10 @@ export const BoxRigth = styled.div`
 
       color: ${(props) => props.theme.textPrimary};
 
-      text-shadow: -5px -5px 0px ${(props) => props.theme.backgroundPrimary},
-        -5px 5px 0px ${(props) => props.theme.backgroundPrimary},
-        5px -5px 0px ${(props) => props.theme.backgroundPrimary},
-        5px 0px 0px ${(props) => props.theme.backgroundPrimary};
+      text-shadow: -5px -5px 0px ${(props) => props.theme.backgroundSecondary},
+        -5px 5px 0px ${(props) => props.theme.backgroundSecondary},
+        5px -5px 0px ${(props) => props.theme.backgroundSecondary},
+        5px 0px 0px ${(props) => props.theme.backgroundSecondary};
     }
   }
 

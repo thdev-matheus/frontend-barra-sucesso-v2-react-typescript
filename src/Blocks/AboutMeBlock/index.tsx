@@ -91,7 +91,7 @@ export const AboutMeBlock = () => {
             }}
           >
             <C.Button
-              label="Sobre Mim"
+              label="Sobre mim"
               onAction={() => {}}
               icon={FiArrowRightCircle}
               iconAfter={true}
