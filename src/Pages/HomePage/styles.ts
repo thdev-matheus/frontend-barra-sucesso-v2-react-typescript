@@ -22,10 +22,4 @@ export const Container = styled.section`
 
     background-color: ${(props) => props.theme.backgroundPrimary};
   }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
-  }
 `;

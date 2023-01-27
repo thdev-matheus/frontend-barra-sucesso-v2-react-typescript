@@ -26,6 +26,7 @@ export const Container = styled.section`
   }
 
   @media (min-width: 1440px) {
+    gap: 1.5rem;
   }
 
   @media (min-width: 1900px) {
@@ -70,6 +71,17 @@ export const BoxTitle = styled.div`
   }
 
   @media (min-width: 1440px) {
+    width: 40%;
+
+    & > div {
+      & > h2 {
+        font-size: 30pt;
+      }
+
+      & > span {
+        font-size: 14pt;
+      }
+    }
   }
 
   @media (min-width: 1900px) {
@@ -100,6 +112,13 @@ export const BoxBody = styled.div`
   }
 
   @media (min-width: 1440px) {
+    width: 40%;
+
+    & > div {
+      & > p {
+        font-size: 12pt;
+      }
+    }
   }
 
   @media (min-width: 1900px) {
@@ -121,9 +140,6 @@ export const BoxButton = styled.div`
       width: 100%;
       height: 100%;
     }
-  }
-
-  @media (min-width: 1440px) {
   }
 
   @media (min-width: 1900px) {
