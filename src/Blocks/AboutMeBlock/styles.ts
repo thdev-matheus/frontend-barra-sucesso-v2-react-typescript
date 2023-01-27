@@ -22,12 +22,6 @@ export const Container = styled.section`
 
     background-color: ${(props) => props.theme.backgroundSecondary};
   }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
-  }
 `;
 
 export const BoxLeft = styled.div`
@@ -67,6 +61,13 @@ export const BoxLeft = styled.div`
   }
 
   @media (min-width: 1440px) {
+    & > div {
+      justify-content: center;
+
+      & > img {
+        height: 110%;
+      }
+    }
   }
 
   @media (min-width: 1900px) {
@@ -104,6 +105,9 @@ export const BoxRight = styled.div`
   }
 
   @media (min-width: 1440px) {
+    & > section {
+      align-items: center;
+    }
   }
 
   @media (min-width: 1900px) {
@@ -144,6 +148,13 @@ export const BoxTitle = styled.div`
   }
 
   @media (min-width: 1440px) {
+    & > span {
+      font-size: 14pt;
+    }
+
+    & > h2 {
+      font-size: 30pt;
+    }
   }
 
   @media (min-width: 1900px) {
@@ -169,13 +180,10 @@ export const BoxBody = styled.div`
     text-align: center;
 
     & > p {
-      font-size: 10pt;
+      font-size: 12pt;
 
       color: ${(props) => props.theme.textPrimary};
     }
-  }
-
-  @media (min-width: 1440px) {
   }
 
   @media (min-width: 1900px) {
@@ -202,6 +210,7 @@ export const BoxButton = styled.div`
   }
 
   @media (min-width: 1440px) {
+    width: 100%;
   }
 
   @media (min-width: 1900px) {

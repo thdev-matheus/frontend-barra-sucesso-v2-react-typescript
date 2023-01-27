@@ -28,9 +28,6 @@ export const Container = styled.section`
   @media (min-width: 1440px) {
     gap: 1.5rem;
   }
-
-  @media (min-width: 1900px) {
-  }
 `;
 
 export const BoxTitle = styled.div`
@@ -83,9 +80,6 @@ export const BoxTitle = styled.div`
       }
     }
   }
-
-  @media (min-width: 1900px) {
-  }
 `;
 
 export const BoxBody = styled.div`
@@ -120,9 +114,6 @@ export const BoxBody = styled.div`
       }
     }
   }
-
-  @media (min-width: 1900px) {
-  }
 `;
 
 export const BoxButton = styled.div`
@@ -140,8 +131,5 @@ export const BoxButton = styled.div`
       width: 100%;
       height: 100%;
     }
-  }
-
-  @media (min-width: 1900px) {
   }
 `;
