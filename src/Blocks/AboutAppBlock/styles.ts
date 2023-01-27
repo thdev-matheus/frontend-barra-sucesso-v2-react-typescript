@@ -21,12 +21,6 @@ export const Container = styled.section`
 
     background-color: ${(props) => props.theme.backgroundPrimary};
   }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
-  }
 `;
 
 export const BoxTitle = styled.div`
@@ -63,9 +57,13 @@ export const BoxTitle = styled.div`
   }
 
   @media (min-width: 1440px) {
-  }
+    & > span {
+      font-size: 12pt;
+    }
 
-  @media (min-width: 1900px) {
+    & > h2 {
+      font-size: 25pt;
+    }
   }
 `;
 
@@ -100,7 +98,6 @@ export const BoxBody = styled.div`
         width: 80%;
 
         font-size: 11pt;
-        font-weight: bold;
 
         color: ${(props) => props.theme.textPrimary};
       }
@@ -108,9 +105,11 @@ export const BoxBody = styled.div`
   }
 
   @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
+    & > div {
+      & > p {
+        font-size: 12pt;
+      }
+    }
   }
 `;
 
@@ -131,11 +130,5 @@ export const BoxButton = styled.div`
       width: 10rem;
       height: 3rem;
     }
-  }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
   }
 `;
