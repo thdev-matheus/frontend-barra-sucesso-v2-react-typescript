@@ -22,14 +22,18 @@ export const HeaderBlock = () => {
       </S.BoxLogo>
 
       <S.BoxMenuDesktop>
-        <li>Home</li>
+        <li>
+          <a href="#home">Home</a>
+        </li>
         <li>
           <a href="#aboutMe">Sobre Mim</a>
         </li>
         <li>
+          <a href="#aboutApp">Sobre o App</a>
+        </li>
+        <li>
           <a href="#contact">Contato</a>
         </li>
-        <li>Sobre o App</li>
       </S.BoxMenuDesktop>
 
       <S.BoxButton>

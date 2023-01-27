@@ -91,6 +91,12 @@ export const BoxMenuDesktop = styled.ul`
 
       transition: 0.5s;
 
+      & > a {
+        text-decoration: none;
+
+        color: ${(props) => props.theme.white};
+      }
+
       :hover {
         transform: scale(0.9);
 

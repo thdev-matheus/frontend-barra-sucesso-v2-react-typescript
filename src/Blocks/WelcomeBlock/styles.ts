@@ -17,6 +17,8 @@ export const Container = styled.section`
     align-items: center;
     gap: 2rem;
 
+    scroll-margin-top: 5rem;
+
     background-image: url(https://i.ibb.co/6yWQCGW/welcome-block-desktop.png);
     background-position: center;
     background-repeat: no-repeat;

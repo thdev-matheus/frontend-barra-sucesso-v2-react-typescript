@@ -12,13 +12,8 @@ export const WelcomeBlock = () => {
 
   return (
     <>
-      <C.Separator
-        identifier="welcome"
-        height="5rem"
-        bgColor="transparent"
-        zIndex={10}
-      />
-      <S.Container>
+      <C.Separator height="5rem" bgColor="transparent" zIndex={10} />
+      <S.Container id="home">
         <S.BoxTitle>
           <motion.div
             transition={{
