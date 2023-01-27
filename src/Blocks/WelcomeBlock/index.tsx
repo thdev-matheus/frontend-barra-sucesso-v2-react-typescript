@@ -6,9 +6,13 @@ import { useDarkMode } from "../../Contexts";
 
 import { FiArrowRightCircle } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export const WelcomeBlock = () => {
   const { isDarkMode } = useDarkMode();
+  const navigate = useNavigate();
+
+  const goTo = (path: string) => navigate(path);
 
   return (
     <>
@@ -114,7 +118,7 @@ export const WelcomeBlock = () => {
           >
             <C.Button
               label="Saiba mais"
-              onAction={() => {}}
+              onAction={() => goTo("/about-app")}
               icon={FiArrowRightCircle}
               iconAfter={true}
               hColor={isDarkMode ? undefined : "#ecf0f1"}

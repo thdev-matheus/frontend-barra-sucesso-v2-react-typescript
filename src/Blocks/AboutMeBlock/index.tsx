@@ -3,9 +3,14 @@ import * as C from "../../Components";
 import { motion } from "framer-motion";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { useDarkMode } from "../../Contexts";
+import { useNavigate } from "react-router-dom";
 
 export const AboutMeBlock = () => {
   const { isDarkMode } = useDarkMode();
+  const navigate = useNavigate();
+
+  const goTo = (path: string) => navigate(path);
+
   return (
     <S.Container id="aboutMe">
       <S.BoxLeft>
@@ -92,7 +97,7 @@ export const AboutMeBlock = () => {
           >
             <C.Button
               label="Sobre mim"
-              onAction={() => {}}
+              onAction={() => goTo("/about-me")}
               icon={FiArrowRightCircle}
               iconAfter={true}
               hColor={isDarkMode ? undefined : "#ecf0f1"}
