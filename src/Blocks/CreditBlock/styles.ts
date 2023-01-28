@@ -6,9 +6,6 @@ export const Container = styled.section<T.IContainerProps>`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100vw;
 
     display: flex;
@@ -39,11 +36,5 @@ export const Container = styled.section<T.IContainerProps>`
         }
       }
     }
-  }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
   }
 `;
