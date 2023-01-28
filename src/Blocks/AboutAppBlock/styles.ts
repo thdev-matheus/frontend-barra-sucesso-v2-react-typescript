@@ -5,6 +5,20 @@ export const Container = styled.section`
   }
 
   @media (min-width: 767px) {
+    width: 100vw;
+    min-height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    scroll-margin-top: 5rem;
+
+    border: 1px solid magenta;
+
+    background-color: ${(props) => props.theme.backgroundPrimary};
   }
 
   @media (min-width: 1024px) {
@@ -28,6 +42,29 @@ export const BoxTitle = styled.div`
   }
 
   @media (min-width: 767px) {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+
+    text-align: center;
+
+    & > span {
+      font-size: 11pt;
+      font-weight: bold;
+
+      color: ${(props) => props.theme.primary};
+    }
+
+    & > h2 {
+      font-size: 20pt;
+      font-weight: bold;
+
+      color: ${(props) => props.theme.textPrimary};
+    }
   }
 
   @media (min-width: 1024px) {
@@ -72,6 +109,33 @@ export const BoxBody = styled.div`
   }
 
   @media (min-width: 767px) {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    & > div {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.3rem;
+
+      text-align: center;
+
+      & > p {
+        width: 90%;
+
+        font-size: 12pt;
+
+        color: ${(props) => props.theme.textPrimary};
+      }
+    }
   }
 
   @media (min-width: 1024px) {
@@ -118,6 +182,15 @@ export const BoxButton = styled.div`
   }
 
   @media (min-width: 767px) {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    & > div {
+      width: 10rem;
+      height: 3rem;
+    }
   }
 
   @media (min-width: 1024px) {
