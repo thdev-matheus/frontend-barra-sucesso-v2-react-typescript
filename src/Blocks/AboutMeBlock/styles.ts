@@ -5,11 +5,8 @@ export const Container = styled.section`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100vw;
-    min-height: 32rem;
+    min-height: 28rem;
 
     display: flex;
     flex-direction: row;
@@ -18,17 +15,17 @@ export const Container = styled.section`
 
     scroll-margin-top: 5rem;
 
-    /* overflow: hidden; */
-
     background-color: ${(props) => props.theme.backgroundSecondary};
+  }
+
+  @media (min-width: 1024px) {
+    min-height: 32rem;
   }
 `;
 
 export const BoxLeft = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
+    display: none;
   }
 
   @media (min-width: 1024px) {
@@ -79,17 +76,14 @@ export const BoxRight = styled.div`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 40%;
+    width: 80%;
     height: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    gap: 1rem;
+    gap: 2rem;
 
     & > section {
       width: 100%;
@@ -102,6 +96,12 @@ export const BoxRight = styled.div`
 
       padding-right: 1rem;
     }
+  }
+
+  @media (min-width: 1024px) {
+    width: 40%;
+
+    gap: 1rem;
   }
 
   @media (min-width: 1440px) {
@@ -119,10 +119,7 @@ export const BoxTitle = styled.div`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 90%;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -147,6 +144,10 @@ export const BoxTitle = styled.div`
     }
   }
 
+  @media (min-width: 1024px) {
+    width: 90%;
+  }
+
   @media (min-width: 1440px) {
     & > span {
       font-size: 14pt;
@@ -166,10 +167,7 @@ export const BoxBody = styled.div`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 90%;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -186,6 +184,10 @@ export const BoxBody = styled.div`
     }
   }
 
+  @media (min-width: 1024px) {
+    width: 90%;
+  }
+
   @media (min-width: 1900px) {
   }
 `;
@@ -195,10 +197,7 @@ export const BoxButton = styled.div`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 90%;
+    width: 100%;
 
     display: flex;
     justify-content: center;
@@ -207,6 +206,10 @@ export const BoxButton = styled.div`
       width: 10rem;
       height: 3rem;
     }
+  }
+
+  @media (min-width: 1024px) {
+    width: 90%;
   }
 
   @media (min-width: 1440px) {
