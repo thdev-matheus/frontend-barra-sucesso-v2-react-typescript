@@ -3,6 +3,21 @@ import * as T from "./types";
 
 export const Container = styled.section<T.IContainerProps>`
   @media (min-width: 320px) {
+    width: 100vw;
+    min-height: 10rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    scroll-margin-top: 5rem;
+
+    background-color: ${(props) => props.theme.backgroundSecondary};
+    background-image: url(${(props) => props.bgImg});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   @media (min-width: 767px) {
@@ -30,6 +45,7 @@ export const Container = styled.section<T.IContainerProps>`
 
 export const BoxLeft = styled.div`
   @media (min-width: 320px) {
+    display: none;
   }
 
   @media (min-width: 767px) {
@@ -68,6 +84,28 @@ export const BoxLeft = styled.div`
 
 export const BoxRigth = styled.div`
   @media (min-width: 320px) {
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > p {
+      width: 80%;
+
+      font-size: 14pt;
+      font-weight: bold;
+
+      text-align: center;
+
+      color: ${(props) => props.theme.textPrimary};
+
+      text-shadow: -5px -5px 0px ${(props) => props.theme.backgroundSecondary},
+        -5px 5px 0px ${(props) => props.theme.backgroundSecondary},
+        5px -5px 0px ${(props) => props.theme.backgroundSecondary},
+        5px 0px 0px ${(props) => props.theme.backgroundSecondary};
+    }
   }
 
   @media (min-width: 767px) {
