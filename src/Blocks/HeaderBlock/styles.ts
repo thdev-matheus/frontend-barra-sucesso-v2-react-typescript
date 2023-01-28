@@ -101,42 +101,7 @@ export const BoxMenuDesktop = styled.ul`
   }
 
   @media (min-width: 767px) {
-    width: calc(5 * (100% / 10));
-    height: 100%;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1.5rem;
-
-    padding-left: 1rem;
-
-    & > li {
-      list-style: none;
-
-      font-size: 12pt;
-      font-weight: bold;
-
-      color: ${(props) => props.theme.white};
-
-      cursor: pointer;
-
-      transition: 0.5s;
-
-      & > a {
-        text-decoration: none;
-
-        color: ${(props) => props.theme.white};
-      }
-
-      :hover {
-        transform: scale(0.9);
-
-        color: ${(props) => props.theme.tertiary};
-
-        transition: 0.5s;
-      }
-    }
+    display: none;
   }
 
   @media (min-width: 1024px) {
@@ -196,7 +161,7 @@ export const BoxButton = styled.div`
   }
 
   @media (min-width: 767px) {
-    width: calc(2 * (100% / 10));
+    width: calc(5 * (100% / 10));
     height: 100%;
 
     display: flex;
@@ -223,12 +188,7 @@ export const BoxTheme = styled.div`
   }
 
   @media (min-width: 767px) {
-    width: calc(1 * (100% / 10));
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
   }
 
   @media (min-width: 1024px) {
@@ -238,5 +198,36 @@ export const BoxTheme = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+`;
+
+export const BoxMenuMobile = styled.div`
+  @media (min-width: 320px) {
+  }
+
+  @media (min-width: 767px) {
+    width: calc(2 * (100% / 10));
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > svg {
+      width: 70%;
+      height: 70%;
+
+      color: ${(props) => props.theme.white};
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+
+  @media (min-width: 1440px) {
+  }
+
+  @media (min-width: 1900px) {
   }
 `;

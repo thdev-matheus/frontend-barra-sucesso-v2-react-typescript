@@ -1,7 +1,10 @@
 /* eslint-disable no-template-curly-in-string */
 import { useDarkMode } from "../../Contexts/DarkMode";
-import { FaWpforms } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+import { FaWpforms } from "react-icons/fa";
+import { CgMenuRight } from "react-icons/cg";
 
 import * as S from "./styles";
 import * as C from "../../Components";
@@ -9,6 +12,9 @@ import * as C from "../../Components";
 export const HeaderBlock = () => {
   const { isDarkMode } = useDarkMode();
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggleIsOpen = () => setIsOpen(!isOpen);
 
   const goTo = (path: string) => navigate(path);
 
@@ -57,6 +63,10 @@ export const HeaderBlock = () => {
       <S.BoxTheme>
         <C.DarkModeToggle color={isDarkMode ? "#f1c40f" : "#ecf0f1"} />
       </S.BoxTheme>
+
+      <S.BoxMenuMobile>
+        <CgMenuRight onClick={toggleIsOpen} />
+      </S.BoxMenuMobile>
     </S.Container>
   );
 };
