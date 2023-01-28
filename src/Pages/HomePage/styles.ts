@@ -2,9 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
     width: 100vw;
     height: 100vh;
 

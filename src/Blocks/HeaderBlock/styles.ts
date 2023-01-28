@@ -17,45 +17,11 @@ export const Container = styled.header`
 
     background-color: ${(props) => props.theme.transparentBlack};
   }
-
-  @media (min-width: 767px) {
-    width: 100%;
-    height: 5rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: absolute;
-    top: 0;
-    z-index: 9000;
-
-    padding: 0.5rem 10%;
-
-    background-color: ${(props) => props.theme.transparentBlack};
-  }
-
-  @media (min-width: 1024px) {
-    width: 100%;
-    height: 5rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: absolute;
-    top: 0;
-    z-index: 9000;
-
-    padding: 0.5rem 10%;
-
-    background-color: ${(props) => props.theme.transparentBlack};
-  }
 `;
 
 export const BoxLogo = styled.div`
   @media (min-width: 320px) {
-    width: calc(3 * (100% / 10));
+    width: calc(6 * (100% / 10));
     height: 100%;
 
     display: flex;
@@ -63,8 +29,8 @@ export const BoxLogo = styled.div`
     align-items: center;
 
     & > img {
-      width: auto;
-      height: 80%;
+      width: 90%;
+      height: auto;
 
       cursor: pointer;
 
@@ -190,12 +156,7 @@ export const BoxMenuDesktop = styled.ul`
 
 export const BoxButton = styled.div`
   @media (min-width: 320px) {
-    width: calc(5 * (100% / 10));
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
   }
 
   @media (min-width: 767px) {
@@ -218,9 +179,6 @@ export const BoxButton = styled.div`
 
 export const BoxTheme = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
     display: none;
   }
 
@@ -236,11 +194,11 @@ export const BoxTheme = styled.div`
 
 export const BoxMenuMobile = styled.div`
   @media (min-width: 320px) {
-    width: calc(2 * (100% / 10));
+    width: calc(4 * (100% / 10));
     height: 100%;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 
     & > svg {
@@ -275,7 +233,7 @@ export const BoxMenuMobile = styled.div`
 export const MenuMobile = styled.ul`
   @media (min-width: 320px) {
     width: 90%;
-    height: 100%;
+    height: 60%;
 
     display: flex;
     flex-direction: column;
@@ -283,7 +241,7 @@ export const MenuMobile = styled.ul`
     align-items: flex-start;
     gap: 1rem;
 
-    padding: 3rem 1rem;
+    padding: 1rem 0;
 
     text-align: left;
 
@@ -291,7 +249,7 @@ export const MenuMobile = styled.ul`
       list-style: none;
 
       & > a {
-        font-size: 20pt;
+        font-size: 12pt;
         font-weight: bold;
         text-decoration: none;
 
@@ -301,29 +259,25 @@ export const MenuMobile = styled.ul`
   }
 
   @media (min-width: 767px) {
-    width: 90%;
     height: 100%;
+
+    padding: 3rem 1rem;
+
+    & > li {
+      & > a {
+        font-size: 20pt;
+      }
+    }
+  }
+`;
+
+export const BoxButtonMobile = styled.div`
+  @media (min-width: 320px) {
+    width: 90%;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 1rem;
-
-    padding: 3rem 1rem;
-
-    text-align: left;
-
-    & > li {
-      list-style: none;
-
-      & > a {
-        font-size: 20pt;
-        font-weight: bold;
-        text-decoration: none;
-
-        color: ${(props) => props.theme.textPrimary};
-      }
-    }
   }
 `;

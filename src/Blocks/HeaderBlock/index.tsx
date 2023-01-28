@@ -8,9 +8,11 @@ import { CgMenuRight } from "react-icons/cg";
 
 import * as S from "./styles";
 import * as C from "../../Components";
+import { useMediaQuery } from "../../Contexts";
 
 export const HeaderBlock = () => {
   const { isDarkMode } = useDarkMode();
+  const { widthScreen } = useMediaQuery();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -56,6 +58,19 @@ export const HeaderBlock = () => {
               <a href="#contact">Contato</a>
             </li>
           </S.MenuMobile>
+          <S.BoxButtonMobile>
+            <C.Button
+              label="/Pergunta"
+              onAction={() => goTo("/form")}
+              icon={widthScreen >= 767 ? FaWpforms : undefined}
+              width={widthScreen >= 767 ? "7.5rem" : "5.5rem"}
+              height={widthScreen >= 767 ? "2.5rem" : "2rem"}
+              iconAfter={true}
+              iconSize="1rem"
+              fontSize={widthScreen >= 767 ? "11pt" : "9pt"}
+              radius={widthScreen >= 767 ? "1.5rem" : ".5rem"}
+            />
+          </S.BoxButtonMobile>
         </C.Drawer>
       )}
       <S.Container>
@@ -89,7 +104,7 @@ export const HeaderBlock = () => {
           <C.Button
             label="/Pergunta"
             onAction={() => goTo("/form")}
-            icon={FaWpforms}
+            icon={widthScreen >= 767 ? FaWpforms : undefined}
             width="7.5rem"
             height="2.5rem"
             iconAfter={true}
