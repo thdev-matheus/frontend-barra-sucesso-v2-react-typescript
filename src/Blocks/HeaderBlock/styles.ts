@@ -2,6 +2,20 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   @media (min-width: 320px) {
+    width: 100%;
+    height: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    z-index: 9000;
+
+    padding: 0.5rem 10%;
+
+    background-color: ${(props) => props.theme.transparentBlack};
   }
 
   @media (min-width: 767px) {
@@ -41,6 +55,27 @@ export const Container = styled.header`
 
 export const BoxLogo = styled.div`
   @media (min-width: 320px) {
+    width: calc(3 * (100% / 10));
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > img {
+      width: auto;
+      height: 80%;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+
+      :hover {
+        transform: scale(1.1);
+
+        transition: 1.5s;
+      }
+    }
   }
 
   @media (min-width: 767px) {
@@ -98,9 +133,6 @@ export const BoxLogo = styled.div`
 
 export const BoxMenuDesktop = styled.ul`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
     display: none;
   }
 
@@ -158,6 +190,12 @@ export const BoxMenuDesktop = styled.ul`
 
 export const BoxButton = styled.div`
   @media (min-width: 320px) {
+    width: calc(5 * (100% / 10));
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @media (min-width: 767px) {
@@ -171,11 +209,6 @@ export const BoxButton = styled.div`
 
   @media (min-width: 1024px) {
     width: calc(2 * (100% / 10));
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   @media (min-width: 1900px) {
@@ -203,6 +236,19 @@ export const BoxTheme = styled.div`
 
 export const BoxMenuMobile = styled.div`
   @media (min-width: 320px) {
+    width: calc(2 * (100% / 10));
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > svg {
+      width: 70%;
+      height: 70%;
+
+      color: ${(props) => props.theme.white};
+    }
   }
 
   @media (min-width: 767px) {
@@ -224,10 +270,60 @@ export const BoxMenuMobile = styled.div`
   @media (min-width: 1024px) {
     display: none;
   }
+`;
 
-  @media (min-width: 1440px) {
+export const MenuMobile = styled.ul`
+  @media (min-width: 320px) {
+    width: 90%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+
+    padding: 3rem 1rem;
+
+    text-align: left;
+
+    & > li {
+      list-style: none;
+
+      & > a {
+        font-size: 20pt;
+        font-weight: bold;
+        text-decoration: none;
+
+        color: ${(props) => props.theme.textPrimary};
+      }
+    }
   }
 
-  @media (min-width: 1900px) {
+  @media (min-width: 767px) {
+    width: 90%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+
+    padding: 3rem 1rem;
+
+    text-align: left;
+
+    & > li {
+      list-style: none;
+
+      & > a {
+        font-size: 20pt;
+        font-weight: bold;
+        text-decoration: none;
+
+        color: ${(props) => props.theme.textPrimary};
+      }
+    }
   }
 `;

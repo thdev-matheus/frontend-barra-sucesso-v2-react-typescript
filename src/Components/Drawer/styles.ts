@@ -9,12 +9,12 @@ export const Container = styled.section`
 
     position: fixed;
     top: 0;
-    z-index: 9000;
+    z-index: 9500;
 
     background-color: ${(props) => props.theme.transparentBlack};
 
     & > section {
-      width: 70%;
+      width: 60%;
       height: 100%;
     }
   }
