@@ -53,6 +53,7 @@ export const FooterBlock = () => {
         <h2>Links Úteis</h2>
         <S.Links>
           <li onClick={() => goTo("/devs-hall")}>Hall de devs</li>
+          <li onClick={() => goTo("/instructor-hall")}>Hall de instrutores</li>
           <li onClick={() => goTo("/suggestions")}>Sugestões</li>
           <li onClick={() => goTo("/contribute")}>Contribua</li>
         </S.Links>
