@@ -29,7 +29,7 @@ export const BoxLogo = styled.div`
     align-items: center;
 
     & > img {
-      width: 90%;
+      width: 70%;
       height: auto;
 
       cursor: pointer;
@@ -46,49 +46,10 @@ export const BoxLogo = styled.div`
 
   @media (min-width: 767px) {
     width: calc(3 * (100% / 10));
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     & > img {
       width: auto;
       height: 80%;
-
-      cursor: pointer;
-
-      transition: 0.3s;
-
-      :hover {
-        transform: scale(1.1);
-
-        transition: 1.5s;
-      }
-    }
-  }
-
-  @media (min-width: 1024px) {
-    width: calc(3 * (100% / 10));
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    & > img {
-      width: auto;
-      height: 80%;
-
-      cursor: pointer;
-
-      transition: 0.3s;
-
-      :hover {
-        transform: scale(1.1);
-
-        transition: 1.5s;
-      }
     }
   }
 
