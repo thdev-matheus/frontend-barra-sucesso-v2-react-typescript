@@ -21,9 +21,7 @@ export const Container = styled.section`
   }
 
   @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
+    min-height: 270px;
   }
 `;
 
@@ -58,9 +56,13 @@ export const BoxSocial = styled.div`
   }
 
   @media (min-width: 1440px) {
-  }
+    & > h2 {
+      width: 20rem;
 
-  @media (min-width: 1900px) {
+      line-height: 3.5rem;
+
+      font-size: 35pt;
+    }
   }
 `;
 
@@ -96,9 +98,10 @@ export const BoxIcons = styled.div`
   }
 
   @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
+    & > a > svg {
+      width: 45px;
+      height: 45px;
+    }
   }
 `;
 
@@ -132,9 +135,9 @@ export const BoxLinks = styled.div`
   }
 
   @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
+    & > h2 {
+      font-size: 28pt;
+    }
   }
 `;
 
@@ -183,9 +186,11 @@ export const Links = styled.ul`
   }
 
   @media (min-width: 1440px) {
-  }
+    gap: 0.8rem;
 
-  @media (min-width: 1900px) {
+    & > li {
+      font-size: 16pt;
+    }
   }
 `;
 
@@ -242,8 +247,14 @@ export const BoxButton = styled.div`
   }
 
   @media (min-width: 1440px) {
-  }
+    & > a > div {
+      width: 5rem;
+      height: 5rem;
 
-  @media (min-width: 1900px) {
+      & > svg {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+    }
   }
 `;

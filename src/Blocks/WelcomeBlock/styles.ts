@@ -2,12 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100vw;
     min-height: 500px;
 
@@ -15,32 +9,38 @@ export const Container = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 0.5rem;
 
     scroll-margin-top: 5rem;
 
-    background-image: url(https://i.ibb.co/6yWQCGW/welcome-block-desktop.png);
+    background-image: url(https://i.ibb.co/WcbRQcP/welcome-block-mobile.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 767px) {
+    min-height: 600px;
+
+    gap: 1rem;
   }
 
-  @media (min-width: 1900px) {
+  @media (min-width: 1024px) {
+    min-height: 500px;
+
+    gap: 2rem;
+
+    background-image: url(https://i.ibb.co/6yWQCGW/welcome-block-desktop.png);
+  }
+
+  @media (min-width: 1440px) {
+    gap: 1.5rem;
   }
 `;
 
 export const BoxTitle = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 35%;
+    width: 60%;
 
     display: flex;
     flex-direction: column;
@@ -52,14 +52,14 @@ export const BoxTitle = styled.div`
 
     & > div {
       & > h2 {
-        font-size: 20pt;
+        font-size: 14pt;
         font-weight: bold;
 
         color: ${(props) => props.theme.textPrimary};
       }
 
       & > span {
-        font-size: 10pt;
+        font-size: 8pt;
         font-weight: bold;
 
         text-transform: uppercase;
@@ -69,22 +69,52 @@ export const BoxTitle = styled.div`
     }
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 767px) {
+    width: 40%;
+
+    & > div {
+      & > h2 {
+        font-size: 18pt;
+      }
+
+      & > span {
+        font-size: 9pt;
+      }
+    }
   }
 
-  @media (min-width: 1900px) {
+  @media (min-width: 1024px) {
+    width: 35%;
+
+    & > div {
+      & > h2 {
+        font-size: 20pt;
+      }
+
+      & > span {
+        font-size: 10pt;
+      }
+    }
+  }
+
+  @media (min-width: 1440px) {
+    width: 40%;
+
+    & > div {
+      & > h2 {
+        font-size: 30pt;
+      }
+
+      & > span {
+        font-size: 14pt;
+      }
+    }
   }
 `;
 
 export const BoxBody = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 35%;
+    width: 70%;
 
     text-align: center;
 
@@ -92,28 +122,36 @@ export const BoxBody = styled.div`
       & > p {
         margin-bottom: 0.5rem;
 
-        font-size: 10pt;
+        font-size: 8pt;
 
         color: ${(props) => props.theme.textPrimary};
       }
     }
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 767px) {
+    width: 50%;
+
+    & > div {
+      & > p {
+        font-size: 12pt;
+      }
+    }
   }
 
-  @media (min-width: 1900px) {
+  @media (min-width: 1440px) {
+    width: 40%;
+
+    & > div {
+      & > p {
+        font-size: 12pt;
+      }
+    }
   }
 `;
 
 export const BoxButton = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 10rem;
     height: 3rem;
 
@@ -121,11 +159,5 @@ export const BoxButton = styled.div`
       width: 100%;
       height: 100%;
     }
-  }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
   }
 `;

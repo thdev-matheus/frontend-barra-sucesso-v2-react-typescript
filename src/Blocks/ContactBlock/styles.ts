@@ -10,7 +10,7 @@ export const Container = styled.section<T.IContainerProps>`
 
   @media (min-width: 1024px) {
     width: 100vw;
-    min-height: 200px;
+    min-height: 12.5rem;
 
     display: flex;
     flex-direction: row;
@@ -27,9 +27,7 @@ export const Container = styled.section<T.IContainerProps>`
   }
 
   @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
+    min-height: 15rem;
   }
 `;
 
@@ -41,7 +39,7 @@ export const BoxLeft = styled.div`
   }
 
   @media (min-width: 1024px) {
-    width: 40%;
+    width: 20%;
     height: 100%;
 
     display: flex;
@@ -64,9 +62,7 @@ export const BoxLeft = styled.div`
   }
 
   @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
+    width: 30%;
   }
 `;
 
@@ -78,7 +74,7 @@ export const BoxRigth = styled.div`
   }
 
   @media (min-width: 1024px) {
-    width: 40%;
+    width: 60%;
     height: 100%;
 
     display: flex;
@@ -103,8 +99,16 @@ export const BoxRigth = styled.div`
   }
 
   @media (min-width: 1440px) {
+    width: 50%;
+
+    & > p {
+      font-size: 25pt;
+    }
   }
 
   @media (min-width: 1900px) {
+    & > p {
+      font-size: 30pt;
+    }
   }
 `;

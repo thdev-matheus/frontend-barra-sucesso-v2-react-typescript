@@ -2,14 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100vw;
-    min-height: 32rem;
+    min-height: 30rem;
 
     display: flex;
     flex-direction: row;
@@ -18,23 +12,21 @@ export const Container = styled.section`
 
     scroll-margin-top: 5rem;
 
-    /* overflow: hidden; */
-
     background-color: ${(props) => props.theme.backgroundSecondary};
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 767px) {
+    min-height: 28rem;
   }
 
-  @media (min-width: 1900px) {
+  @media (min-width: 1024px) {
+    min-height: 32rem;
   }
 `;
 
 export const BoxLeft = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
+    display: none;
   }
 
   @media (min-width: 1024px) {
@@ -67,6 +59,13 @@ export const BoxLeft = styled.div`
   }
 
   @media (min-width: 1440px) {
+    & > div {
+      justify-content: center;
+
+      & > img {
+        height: 110%;
+      }
+    }
   }
 
   @media (min-width: 1900px) {
@@ -75,20 +74,14 @@ export const BoxLeft = styled.div`
 
 export const BoxRight = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 40%;
+    width: 80%;
     height: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    gap: 1rem;
+    gap: 2rem;
 
     & > section {
       width: 100%;
@@ -103,7 +96,16 @@ export const BoxRight = styled.div`
     }
   }
 
+  @media (min-width: 1024px) {
+    width: 40%;
+
+    gap: 1rem;
+  }
+
   @media (min-width: 1440px) {
+    & > section {
+      align-items: center;
+    }
   }
 
   @media (min-width: 1900px) {
@@ -112,13 +114,7 @@ export const BoxRight = styled.div`
 
 export const BoxTitle = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 90%;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -129,21 +125,42 @@ export const BoxTitle = styled.div`
     text-align: center;
 
     & > span {
-      font-size: 11pt;
+      font-size: 9pt;
       font-weight: bold;
 
       color: ${(props) => props.theme.secondary};
     }
 
     & > h2 {
-      font-size: 18pt;
+      font-size: 14pt;
       font-weight: bold;
 
       color: ${(props) => props.theme.textPrimary};
     }
   }
 
+  @media (min-width: 767px) {
+    & > span {
+      font-size: 11pt;
+    }
+
+    & > h2 {
+      font-size: 18pt;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: 90%;
+  }
+
   @media (min-width: 1440px) {
+    & > span {
+      font-size: 14pt;
+    }
+
+    & > h2 {
+      font-size: 30pt;
+    }
   }
 
   @media (min-width: 1900px) {
@@ -152,13 +169,7 @@ export const BoxTitle = styled.div`
 
 export const BoxBody = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 90%;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -169,13 +180,20 @@ export const BoxBody = styled.div`
     text-align: center;
 
     & > p {
-      font-size: 10pt;
+      font-size: 8pt;
 
       color: ${(props) => props.theme.textPrimary};
     }
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 767px) {
+    & > p {
+      font-size: 12pt;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: 90%;
   }
 
   @media (min-width: 1900px) {
@@ -184,13 +202,7 @@ export const BoxBody = styled.div`
 
 export const BoxButton = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 90%;
+    width: 100%;
 
     display: flex;
     justify-content: center;
@@ -201,7 +213,12 @@ export const BoxButton = styled.div`
     }
   }
 
+  @media (min-width: 1024px) {
+    width: 90%;
+  }
+
   @media (min-width: 1440px) {
+    width: 100%;
   }
 
   @media (min-width: 1900px) {
