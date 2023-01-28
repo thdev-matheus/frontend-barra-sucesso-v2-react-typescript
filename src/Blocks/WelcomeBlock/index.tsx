@@ -93,7 +93,7 @@ export const WelcomeBlock = () => {
               precisar do atendimento.
             </p>
             <p>
-              Seja completamente sinceroa(a) e não tenha medo ou vergonha de
+              Seja completamente sincero(a) e não tenha medo ou vergonha de
               informar qual a sua real dificuldade.
             </p>
           </motion.div>
