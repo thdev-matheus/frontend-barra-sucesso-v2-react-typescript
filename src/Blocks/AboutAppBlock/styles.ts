@@ -2,14 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100vw;
-    min-height: 300px;
+    min-height: 25rem;
 
     display: flex;
     flex-direction: column;
@@ -21,17 +15,19 @@ export const Container = styled.section`
 
     background-color: ${(props) => props.theme.backgroundPrimary};
   }
+
+  @media (min-width: 767px) {
+    min-height: 21.8rem;
+  }
+
+  @media (min-width: 1024px) {
+    min-height: 18.7rem;
+  }
 `;
 
 export const BoxTitle = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 80%;
+    width: 90%;
 
     display: flex;
     flex-direction: column;
@@ -42,17 +38,35 @@ export const BoxTitle = styled.div`
     text-align: center;
 
     & > span {
-      font-size: 11pt;
+      font-size: 9pt;
       font-weight: bold;
 
       color: ${(props) => props.theme.primary};
     }
 
     & > h2 {
-      font-size: 20pt;
+      font-size: 16pt;
       font-weight: bold;
 
       color: ${(props) => props.theme.textPrimary};
+    }
+  }
+
+  @media (min-width: 767px) {
+    width: 80%;
+
+    & > span {
+      font-size: 11pt;
+    }
+
+    & > h2 {
+      font-size: 20pt;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & > span {
+      font-size: 11pt;
     }
   }
 
@@ -69,13 +83,7 @@ export const BoxTitle = styled.div`
 
 export const BoxBody = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 80%;
+    width: 90%;
 
     display: flex;
     flex-direction: column;
@@ -90,16 +98,38 @@ export const BoxBody = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.5rem;
 
       text-align: center;
 
       & > p {
+        width: 90%;
+
+        font-size: 10pt;
+
+        color: ${(props) => props.theme.textPrimary};
+      }
+    }
+  }
+
+  @media (min-width: 767px) {
+    width: 80%;
+
+    & > div {
+      & > p {
+        font-size: 12pt;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: 80%;
+
+    & > div {
+      & > p {
         width: 80%;
 
         font-size: 11pt;
-
-        color: ${(props) => props.theme.textPrimary};
       }
     }
   }
@@ -115,12 +145,6 @@ export const BoxBody = styled.div`
 
 export const BoxButton = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100%;
 
     display: flex;

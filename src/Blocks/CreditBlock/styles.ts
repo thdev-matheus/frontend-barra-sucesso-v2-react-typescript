@@ -3,26 +3,21 @@ import * as T from "./types";
 
 export const Container = styled.section<T.IContainerProps>`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100vw;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
 
     background-color: ${(props) => props.theme.transparentBlack};
 
     & > p {
       display: flex;
       gap: 0.3rem;
-      font-size: 12pt;
+
+      font-size: 10pt;
       font-weight: bold;
 
       color: ${(props) => props.theme.white};
@@ -41,9 +36,11 @@ export const Container = styled.section<T.IContainerProps>`
     }
   }
 
-  @media (min-width: 1440px) {
-  }
+  @media (min-width: 767px) {
+    padding: 1rem 2rem;
 
-  @media (min-width: 1900px) {
+    & > p {
+      font-size: 12pt;
+    }
   }
 `;

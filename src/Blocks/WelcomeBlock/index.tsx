@@ -4,9 +4,9 @@ import * as C from "../../Components";
 
 import { useDarkMode } from "../../Contexts";
 
-import { FiArrowRightCircle } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { FaWpforms } from "react-icons/fa";
 
 export const WelcomeBlock = () => {
   const { isDarkMode } = useDarkMode();
@@ -117,9 +117,9 @@ export const WelcomeBlock = () => {
             }}
           >
             <C.Button
-              label="Saiba mais"
+              label="/Pergunta"
               onAction={() => goTo("/about-app")}
-              icon={FiArrowRightCircle}
+              icon={FaWpforms}
               iconAfter={true}
               hColor={isDarkMode ? undefined : "#ecf0f1"}
               hBgColor={isDarkMode ? undefined : "#2c3e50"}

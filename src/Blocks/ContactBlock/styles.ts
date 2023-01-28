@@ -3,14 +3,8 @@ import * as T from "./types";
 
 export const Container = styled.section<T.IContainerProps>`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100vw;
-    min-height: 12.5rem;
+    min-height: 10rem;
 
     display: flex;
     flex-direction: row;
@@ -26,6 +20,10 @@ export const Container = styled.section<T.IContainerProps>`
     background-size: cover;
   }
 
+  @media (min-width: 767px) {
+    min-height: 12.5rem;
+  }
+
   @media (min-width: 1440px) {
     min-height: 15rem;
   }
@@ -33,17 +31,15 @@ export const Container = styled.section<T.IContainerProps>`
 
 export const BoxLeft = styled.div`
   @media (min-width: 320px) {
+    display: none;
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 20%;
+    width: 40%;
     height: 100%;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 
     padding: 2rem 1rem;
@@ -61,6 +57,12 @@ export const BoxLeft = styled.div`
     }
   }
 
+  @media (min-width: 1024px) {
+    width: 20%;
+
+    justify-content: center;
+  }
+
   @media (min-width: 1440px) {
     width: 30%;
   }
@@ -68,13 +70,7 @@ export const BoxLeft = styled.div`
 
 export const BoxRigth = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 60%;
+    width: 80%;
     height: 100%;
 
     display: flex;
@@ -84,7 +80,7 @@ export const BoxRigth = styled.div`
     & > p {
       width: 80%;
 
-      font-size: 18pt;
+      font-size: 14pt;
       font-weight: bold;
 
       text-align: center;
@@ -95,6 +91,14 @@ export const BoxRigth = styled.div`
         -5px 5px 0px ${(props) => props.theme.backgroundSecondary},
         5px -5px 0px ${(props) => props.theme.backgroundSecondary},
         5px 0px 0px ${(props) => props.theme.backgroundSecondary};
+    }
+  }
+
+  @media (min-width: 767px) {
+    width: 60%;
+
+    & > p {
+      font-size: 18pt;
     }
   }
 
