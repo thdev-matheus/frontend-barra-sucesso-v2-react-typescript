@@ -33,6 +33,8 @@ export const BoxLeft = styled.div`
     width: 40%;
     height: 100%;
 
+    display: block;
+
     & > div {
       width: 100%;
       height: 100%;
