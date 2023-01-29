@@ -2,13 +2,15 @@
 import { useDarkMode } from "../../Contexts/DarkMode";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useMediaQuery } from "../../Contexts";
 
 import { FaWpforms } from "react-icons/fa";
 import { CgMenuRight } from "react-icons/cg";
 
+import { motion } from "framer-motion";
+
 import * as S from "./styles";
 import * as C from "../../Components";
-import { useMediaQuery } from "../../Contexts";
 
 export const HeaderBlock = () => {
   const { isDarkMode } = useDarkMode();
@@ -73,7 +75,20 @@ export const HeaderBlock = () => {
           </S.BoxButtonMobile>
         </C.Drawer>
       )}
-      <S.Container>
+      <S.Container
+        transition={{
+          duration: 0.8,
+        }}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        exit={{
+          opacity: 0,
+        }}
+      >
         <S.BoxLogo>
           <img
             src={

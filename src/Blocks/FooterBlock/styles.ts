@@ -199,6 +199,14 @@ export const Links = styled.ul`
         text-decoration: none;
 
         color: ${(props) => props.theme.textTertiary};
+
+        :hover {
+          transform: scale(0.9);
+
+          color: ${(props) => props.theme.tertiary};
+
+          transition: 1s;
+        }
       }
 
       :hover {
