@@ -5,6 +5,7 @@ import { FooterBlock } from "./FooterBlock";
 import { CreditBlock } from "./CreditBlock";
 import { AboutAppBlock } from "./AboutAppBlock";
 import { ContactBlock } from "./ContactBlock";
+import { FormBlock } from "./FormBlock";
 
 export {
   HeaderBlock,
@@ -14,4 +15,5 @@ export {
   AboutMeBlock,
   AboutAppBlock,
   ContactBlock,
+  FormBlock,
 };

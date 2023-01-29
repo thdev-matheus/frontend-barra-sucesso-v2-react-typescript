@@ -5,8 +5,6 @@ import { useState } from "react";
 export const HomePage = () => {
   const [scrollTop, setScrollTop] = useState<number>(0);
 
-  console.log(scrollTop);
-
   return (
     <S.Container
       id="homepage"

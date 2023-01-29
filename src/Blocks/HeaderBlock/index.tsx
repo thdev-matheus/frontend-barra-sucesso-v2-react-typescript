@@ -137,6 +137,7 @@ export const HeaderBlock = () => {
           <CgMenuRight onClick={toggleIsOpen} />
         </S.BoxMenuMobile>
       </S.Container>
+      <C.Separator height="5rem" bgColor="transparent" zIndex={10} />
     </>
   );
 };
