@@ -98,12 +98,15 @@ export const FormBlock = () => {
     handleSubmit,
     formState: { errors },
     getValues,
+    setError,
   } = useForm<T.ISlashQuestion>({
     resolver: yupResolver(slashQuestionSchema),
     reValidateMode: "onSubmit",
   });
 
   const handleSlashQuestionSubmit = (data: T.ISlashQuestion) => {
+    data.code = code;
+    data.language = configEditor(code);
     console.log(data);
   };
 
@@ -137,280 +140,258 @@ export const FormBlock = () => {
       setDescription(true);
       setCodeBox(false);
       setObs(false);
-    } else if (!values.code) {
-      setIssue(false);
-      setDoubt(false);
-      setSubject(false);
-      setDescription(false);
-      setCodeBox(true);
-      setObs(false);
-    } else if (!values.obs) {
-      setIssue(false);
-      setDoubt(false);
-      setSubject(false);
-      setDescription(false);
-      setCodeBox(false);
-      setObs(true);
     }
   };
 
-  const BoxIssue = () => {
-    return (
-      <>
-        <p>Digite abaixo o código da atividade que você está agora.</p>
-        <S.BoxInput>
-          <C.Input
-            label="* Estou na atividade..."
-            placeholder="Ex.: S2-03"
-            height="3.5rem"
-            isMask={true}
-            mask="S9-99"
-            defaultValue={getValues("issue") || ""}
-            error={errors.issue?.message}
-            {...register("issue")}
-          />
-        </S.BoxInput>
+  const verifyIssue = () => {
+    if (!getValues().issue) {
+      setError("issue", { message: "Campo obrigatório!" });
+      return;
+    }
 
-        <S.BoxControls style={{ justifyContent: "flex-end" }}>
-          <h4
-            onClick={() => {
-              setIssue(false);
-              setDoubt(true);
-            }}
-          >
-            Próximo
-          </h4>
-        </S.BoxControls>
-      </>
-    );
+    setIssue(false);
+    setDoubt(true);
   };
 
-  const BoxDoubt = () => {
-    return (
-      <>
-        <p>Digite abaixo a origem da sua dúvida.</p>
-        <S.BoxInput>
-          <C.Input
-            label="Minha dúvida é sobre..."
-            placeholder="Ex.: React, Typescript, VS Code..."
-            height="3.5rem"
-            error={errors.doubt?.message}
-            defaultValue={getValues("doubt") || ""}
-            {...register("doubt")}
-          />
-        </S.BoxInput>
+  const verifyDoubt = () => {
+    if (!getValues().doubt) {
+      setError("doubt", { message: "Campo obrigatório!" });
+      return;
+    }
 
-        <S.BoxControls>
-          <h4
-            onClick={() => {
-              setDoubt(false);
-              setIssue(true);
-            }}
-          >
-            Anterior
-          </h4>
-          <h4
-            onClick={() => {
-              setDoubt(false);
-              setSubject(true);
-            }}
-          >
-            Próximo
-          </h4>
-        </S.BoxControls>
-      </>
-    );
+    setDoubt(false);
+    setSubject(true);
   };
 
-  const BoxSubject = () => {
-    return (
-      <>
-        <p>Digite abaixo o assunto relacionado a sua dúvida.</p>
-        <S.BoxInput>
-          <C.Input
-            label="Assunto"
-            placeholder="Ex.: DOM, classes, funções, componentes..."
-            height="3.5rem"
-            defaultValue={getValues("subject") || ""}
-            error={errors.subject?.message}
-            {...register("subject")}
-          />
-        </S.BoxInput>
+  const verifySubject = () => {
+    if (!getValues().subject) {
+      setError("subject", { message: "Campo obrigatório!" });
+      return;
+    }
 
-        <S.BoxControls>
-          <h4
-            onClick={() => {
-              setSubject(false);
-              setDoubt(true);
-            }}
-          >
-            Anterior
-          </h4>
-          <h4
-            onClick={() => {
-              setSubject(false);
-              setDescription(true);
-            }}
-          >
-            Próximo
-          </h4>
-        </S.BoxControls>
-      </>
-    );
+    setSubject(false);
+    setDescription(true);
   };
 
-  const BoxDescription = () => {
-    return (
-      <>
-        <p>
-          Digite abaixo a descrição mais completa que conseguir de onde você
-          procurou, suas tentativas e sua lógica detalhada.
-        </p>
-        <S.BoxInput>
-          <C.TextArea
-            label="O que tentei fazer?"
-            placeholder="Ex.: Procurei na documentação e tentei usar tal lógica"
-            height="250px"
-            defaultValue={getValues("description") || ""}
-            error={errors.description?.message}
-            {...register("description")}
-          />
-        </S.BoxInput>
+  const verifyDescription = () => {
+    if (!getValues().description) {
+      setError("description", { message: "Campo obrigatório!" });
+      return;
+    }
 
-        <S.BoxControls>
-          <h4
-            onClick={() => {
-              setDescription(false);
-              setSubject(true);
-            }}
-          >
-            Anterior
-          </h4>
-          <h4
-            onClick={() => {
-              setDescription(false);
-              setCodeBox(true);
-            }}
-          >
-            Próximo
-          </h4>
-        </S.BoxControls>
-      </>
-    );
-  };
-
-  const BoxCode = () => {
-    return (
-      <>
-        <p>
-          Não é obrigatório mas é interessante compartilhar o código que está
-          causando problemas em sua aplicação então selecione a linguagem e cole
-          no editor o seu código
-        </p>
-        <S.BoxSelect>
-          <C.Select
-            label=""
-            activeOpt={activeOption}
-            options={options}
-            setAction={setActiveOption}
-            height="3.2rem"
-            width="20rem"
-          />
-        </S.BoxSelect>
-        <S.BoxInput>
-          <Editor
-            {...register("code")}
-            className="editor"
-            value={code}
-            autoFocus
-            onValueChange={(code) => setCode(code)}
-            highlight={(code) => configEditor(code)}
-            onFocus={(e) => {
-              (e.target as HTMLTextAreaElement).selectionStart = (
-                e.target as HTMLTextAreaElement
-              ).selectionEnd = (e.target as HTMLTextAreaElement).value.length;
-            }}
-            padding={10}
-            style={{
-              fontFamily: '"Fira code", "Fira Mono", monospace',
-              fontSize: 12,
-            }}
-          />
-        </S.BoxInput>
-
-        <S.BoxControls>
-          <h4
-            onClick={() => {
-              setCodeBox(false);
-              setDescription(true);
-            }}
-          >
-            Anterior
-          </h4>
-          <h4
-            onClick={() => {
-              setCodeBox(false);
-              setObs(true);
-            }}
-          >
-            Próximo
-          </h4>
-        </S.BoxControls>
-      </>
-    );
-  };
-
-  const BoxObs = () => {
-    return (
-      <>
-        <p>
-          Nesta seção você pode compartilhar qualquer informação extra que pode
-          vir a ajudar o monitor/instrutor que vier lhe atender.
-        </p>
-        <S.BoxInput>
-          <C.TextArea
-            label="Considerações finais"
-            placeholder="Digite alguma observação"
-            defaultValue={getValues("obs") || ""}
-            height="250px"
-            error={errors.obs?.message}
-            {...register("obs")}
-          />
-        </S.BoxInput>
-
-        <S.BoxControls>
-          <h4
-            onClick={() => {
-              setObs(false);
-              setCodeBox(true);
-            }}
-          >
-            Anterior
-          </h4>
-        </S.BoxControls>
-      </>
-    );
+    setDescription(false);
+    setCodeBox(true);
   };
 
   return (
     <S.Container onSubmit={handleSubmit(handleSlashQuestionSubmit)}>
-      {issue && <BoxIssue />}
-      {doubt && <BoxDoubt />}
-      {subject && <BoxSubject />}
-      {description && <BoxDescription />}
-      {codeBox && <BoxCode />}
+      {issue && (
+        <>
+          <p>Digite abaixo o código da atividade que você está agora.</p>
+          <S.BoxInput>
+            <C.Input
+              label="* Estou na atividade..."
+              placeholder="Ex.: S2-03"
+              height="3.5rem"
+              isMask={true}
+              mask="S9-99"
+              defaultValue={getValues("issue") || ""}
+              error={errors.issue?.message}
+              {...register("issue")}
+            />
+          </S.BoxInput>
+
+          <S.BoxControls style={{ justifyContent: "flex-end" }}>
+            <h4 onClick={verifyIssue}>Próximo</h4>
+          </S.BoxControls>
+        </>
+      )}
+
+      {doubt && (
+        <>
+          <p>Digite abaixo a origem da sua dúvida.</p>
+          <S.BoxInput>
+            <C.Input
+              label="Minha dúvida é sobre..."
+              placeholder="Ex.: React, Typescript, VS Code..."
+              height="3.5rem"
+              error={errors.doubt?.message}
+              defaultValue={getValues("doubt") || ""}
+              {...register("doubt")}
+            />
+          </S.BoxInput>
+
+          <S.BoxControls>
+            <h4
+              onClick={() => {
+                setDoubt(false);
+                setIssue(true);
+              }}
+            >
+              Anterior
+            </h4>
+            <h4 onClick={verifyDoubt}>Próximo</h4>
+          </S.BoxControls>
+        </>
+      )}
+
+      {subject && (
+        <>
+          <p>Digite abaixo o assunto relacionado a sua dúvida.</p>
+          <S.BoxInput>
+            <C.Input
+              label="Assunto"
+              placeholder="Ex.: DOM, classes, funções, componentes..."
+              height="3.5rem"
+              defaultValue={getValues("subject") || ""}
+              error={errors.subject?.message}
+              {...register("subject")}
+            />
+          </S.BoxInput>
+
+          <S.BoxControls>
+            <h4
+              onClick={() => {
+                setSubject(false);
+                setDoubt(true);
+              }}
+            >
+              Anterior
+            </h4>
+            <h4 onClick={verifySubject}>Próximo</h4>
+          </S.BoxControls>
+        </>
+      )}
+
+      {description && (
+        <>
+          <p>
+            Digite abaixo a descrição mais completa que conseguir de onde você
+            procurou, suas tentativas e sua lógica detalhada.
+          </p>
+          <S.BoxInput>
+            <C.TextArea
+              label="O que tentei fazer?"
+              placeholder="Ex.: Procurei na documentação e tentei usar tal lógica"
+              height="250px"
+              defaultValue={getValues("description") || ""}
+              error={errors.description?.message}
+              {...register("description")}
+            />
+          </S.BoxInput>
+
+          <S.BoxControls>
+            <h4
+              onClick={() => {
+                setDescription(false);
+                setSubject(true);
+              }}
+            >
+              Anterior
+            </h4>
+            <h4 onClick={verifyDescription}>Próximo</h4>
+          </S.BoxControls>
+        </>
+      )}
+
+      {codeBox && (
+        <>
+          <p>
+            Não é obrigatório mas é interessante compartilhar o código que está
+            causando problemas em sua aplicação então selecione a linguagem e
+            cole no editor o seu código
+          </p>
+          <S.BoxSelect>
+            <C.Select
+              label=""
+              activeOpt={activeOption}
+              options={options}
+              setAction={setActiveOption}
+              height="3.2rem"
+              width="20rem"
+            />
+          </S.BoxSelect>
+          <S.BoxInput>
+            <Editor
+              {...register("code")}
+              className="editor"
+              value={code}
+              autoFocus
+              onValueChange={(code) => setCode(code)}
+              highlight={(code) => configEditor(code)}
+              onFocus={(e) => {
+                (e.target as HTMLTextAreaElement).selectionStart = (
+                  e.target as HTMLTextAreaElement
+                ).selectionEnd = (e.target as HTMLTextAreaElement).value.length;
+              }}
+              padding={10}
+              style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 12,
+              }}
+            />
+          </S.BoxInput>
+
+          <S.BoxControls>
+            <h4
+              onClick={() => {
+                setCodeBox(false);
+                setDescription(true);
+              }}
+            >
+              Anterior
+            </h4>
+            <h4
+              onClick={() => {
+                setCodeBox(false);
+                setObs(true);
+              }}
+            >
+              Próximo
+            </h4>
+          </S.BoxControls>
+        </>
+      )}
+
       {obs && (
         <>
-          <BoxObs />
-          <C.Button
-            label="Finalizar"
-            onAction={handleErrors}
-            icon={FiArrowRightCircle}
-            iconAfter={true}
-            hColor={isDarkMode ? undefined : "#ecf0f1"}
-            hBgColor={isDarkMode ? undefined : "#2c3e50"}
-            radius="2rem"
-          />
+          <p>
+            Nesta seção você pode compartilhar qualquer informação extra que
+            pode vir a ajudar o monitor/instrutor que vier lhe atender.
+          </p>
+          <S.BoxInput>
+            <C.TextArea
+              label="Considerações finais"
+              placeholder="Digite alguma observação"
+              defaultValue={getValues("obs") || ""}
+              height="250px"
+              error={errors.obs?.message}
+              {...register("obs")}
+            />
+          </S.BoxInput>
+
+          <S.BoxControls>
+            <h4
+              onClick={() => {
+                setObs(false);
+                setCodeBox(true);
+              }}
+            >
+              Anterior
+            </h4>
+          </S.BoxControls>
+
+          <S.BoxButton>
+            <C.Button
+              label="Finalizar"
+              onAction={handleErrors}
+              icon={FiArrowRightCircle}
+              iconAfter={true}
+              hColor={isDarkMode ? undefined : "#ecf0f1"}
+              hBgColor={isDarkMode ? undefined : "#2c3e50"}
+              radius="2rem"
+            />
+          </S.BoxButton>
         </>
       )}
     </S.Container>

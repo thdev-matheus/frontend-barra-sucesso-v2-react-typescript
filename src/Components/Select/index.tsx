@@ -1,6 +1,7 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import * as T from "./types";
 import * as S from "./styles";
+import { useState } from "react";
 
 export const Select = ({
   label,
@@ -14,6 +15,8 @@ export const Select = ({
   color,
   bgColor,
 }: T.ISelectProps) => {
+  const [display, setDisplay] = useState<string>("none");
+
   return (
     <S.Container
       width={width}
@@ -25,14 +28,17 @@ export const Select = ({
     >
       <span>{label}</span>
       <Dropdown>
-        <Dropdown.Toggle>{activeOpt}</Dropdown.Toggle>
+        <Dropdown.Toggle onClick={() => setDisplay("flex")}>
+          {activeOpt}
+        </Dropdown.Toggle>
 
-        <Dropdown.Menu>
+        <Dropdown.Menu style={{ display: display }}>
           {options.map((opt, i) => (
             <Dropdown.Item
               key={i}
               onClick={() => {
                 setAction(opt);
+                setDisplay("none");
               }}
             >
               {opt}

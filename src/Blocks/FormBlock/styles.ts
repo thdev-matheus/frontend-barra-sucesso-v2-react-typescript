@@ -129,3 +129,26 @@ export const BoxSelect = styled.div`
   @media (min-width: 1900px) {
   }
 `;
+
+export const BoxButton = styled.div`
+  @media (min-width: 320px) {
+  }
+
+  @media (min-width: 767px) {
+  }
+
+  @media (min-width: 1024px) {
+    width: 60%;
+    height: 3rem;
+
+    & > button {
+      border-radius: 0.5rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+  }
+
+  @media (min-width: 1900px) {
+  }
+`;

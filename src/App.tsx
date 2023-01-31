@@ -2,7 +2,7 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./Routes";
 
 import { ThemeProvider } from "styled-components";
-import * as theme from "./Styles/Themes";
+import * as theme from "./styles/Themes";
 import { useDarkMode } from "./Contexts";
 
 export const App = () => {
