@@ -27,7 +27,6 @@ export const FormPage = () => {
         }}
       /> */}
 
-      <B.FooterBlock />
       <B.CreditBlock />
     </S.Container>
   );

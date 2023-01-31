@@ -14,6 +14,13 @@ export const GlobalStyle = createGlobalStyle`
     ::-webkit-scrollbar {
       display: none;
     }
+
+    --bs-btn-active-color: #2c3e50 !important;
+    --bs-btn-active-bg: #1abc9c !important;
+    --bs-btn-active-border-color: #1abc9c !important;
+    --bs-dropdown-link-active-bg: #1abc9c !important;
+    --bs-dropdown-link-active-color: #2c3e50 !important;
+    --bs-body-font-family: "Roboto"; 
 }
 
   body {

@@ -1,18 +1,21 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
+export const Container = styled.form`
   @media (min-width: 320px) {
   }
 
   @media (min-width: 767px) {
+  }
+
+  @media (min-width: 1024px) {
     width: 100vw;
-    height: calc(100vh - 17.5rem);
+    height: calc(100vh - 5rem);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 
     background-color: ${(props) => props.theme.backgroundPrimamry};
 
@@ -26,9 +29,6 @@ export const Container = styled.section`
 
       color: ${(props) => props.theme.textPrimary};
     }
-  }
-
-  @media (min-width: 1024px) {
   }
 
   @media (min-width: 1440px) {
@@ -70,6 +70,7 @@ export const BoxControls = styled.div`
     justify-content: space-between;
 
     padding: 0 2rem;
+    margin-top: 1rem;
 
     & > h4 {
       font-size: 16pt;
@@ -89,6 +90,27 @@ export const BoxControls = styled.div`
         transition: 0.8s;
       }
     }
+  }
+
+  @media (min-width: 1440px) {
+  }
+
+  @media (min-width: 1900px) {
+  }
+`;
+
+export const BoxSelect = styled.div`
+  @media (min-width: 320px) {
+  }
+
+  @media (min-width: 767px) {
+  }
+
+  @media (min-width: 1024px) {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
   }
 
   @media (min-width: 1440px) {

@@ -3,32 +3,108 @@ import * as T from "./types";
 import * as C from "../../Components";
 import * as S from "./styles";
 
-import Editor from "react-simple-code-editor";
-import { highlight, languages } from "prismjs";
-import "prismjs/components/prism-clike";
-import "prismjs/components/prism-javascript";
-import "prismjs/themes/prism.css";
-import { cursorTo } from "readline";
+// import Editor from "react-simple-code-editor";
+// import { highlight, languages } from "prismjs";
+// import "prismjs/components/prism-clike";
+// import "prismjs/components/prism-javascript";
+// import "prismjs/themes/prism.css";
+// import { cursorTo } from "readline";
+
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { slashQuestionSchema } from "../../Schemas";
 
 export const FormBlock = () => {
-  const [issue, setIssue] = useState<T.IIssue>({ isOpen: true, value: "" });
-  const [doubt, setDoubt] = useState<T.IDoubt>({ isOpen: false, value: "" });
-  const [subject, setSubject] = useState<T.ISubject>({
-    isOpen: false,
-    value: "",
-  });
-  const [attempt, setAttempt] = useState<T.IAttempt>({
-    isOpen: false,
-    value: "",
-  });
-  const [description, setDescription] = useState<T.IDescription>({
-    isOpen: false,
-    value: "",
-  });
-  const [code, setCode] = useState<T.ICode>({ isOpen: false, value: "" });
-  const [obs, setObs] = useState<T.IObs>({ isOpen: false, value: "" });
+  const [issue, setIssue] = useState<boolean>(true);
+  const [doubt, setDoubt] = useState<boolean>(false);
+  const [subject, setSubject] = useState<boolean>(false);
+  const [description, setDescription] = useState<boolean>(false);
+  const [code, setCode] = useState<boolean>(false);
+  const [obs, setObs] = useState<boolean>(false);
+  const [activeOption, setActiveOption] = useState<string>("Javascript");
 
-  console.log(issue.value);
+  const options = [
+    "CSS",
+    "Django",
+    "Docker",
+    "Dockerfile",
+    "GIT",
+    "HTML",
+    "Javascript",
+    "JSON",
+    "Markdown",
+    "Python",
+    "React JSX",
+    "React TSX",
+    "Regex",
+    "SQL",
+    "Terminal",
+    "TypeScript",
+    "YAML",
+  ];
+
+  const configEditor = () => {};
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<T.ISlashQuestion>({
+    resolver: yupResolver(slashQuestionSchema),
+    reValidateMode: "onSubmit",
+  });
+
+  const handleSlashQuestionSubmit = (data: T.ISlashQuestion) => {
+    console.log(data);
+  };
+
+  const handleErrors = () => {
+    if (errors.issue) {
+      setIssue(true);
+      setDoubt(false);
+      setSubject(false);
+      setDescription(false);
+      setCode(false);
+      setObs(false);
+    } else if (errors.doubt) {
+      setIssue(false);
+      setDoubt(true);
+      setSubject(false);
+      setDescription(false);
+      setCode(false);
+      setObs(false);
+    } else if (errors.subject) {
+      setIssue(false);
+      setDoubt(false);
+      setSubject(true);
+      setDescription(false);
+      setCode(false);
+      setObs(false);
+    } else if (errors.description) {
+      setIssue(false);
+      setDoubt(false);
+      setSubject(false);
+      setDescription(true);
+      setCode(false);
+      setObs(false);
+    } else if (errors.code) {
+      setIssue(false);
+      setDoubt(false);
+      setSubject(false);
+      setDescription(false);
+      setCode(true);
+      setObs(false);
+    } else if (errors.obs) {
+      setIssue(false);
+      setDoubt(false);
+      setSubject(false);
+      setDescription(false);
+      setCode(false);
+      setObs(true);
+    }
+  };
+
+  handleErrors();
 
   const BoxIssue = () => {
     return (
@@ -36,23 +112,21 @@ export const FormBlock = () => {
         <p>Digite abaixo o código da atividade que você está agora.</p>
         <S.BoxInput>
           <C.Input
-            label="Estou na atividade..."
+            label="* Estou na atividade..."
             placeholder="Ex.: S2-03"
             height="3.5rem"
-            value={issue.value}
-            autoFocus
-            onChange={(e) => {
-              e.preventDefault();
-              setIssue({ ...issue, value: e.target.value });
-            }}
+            isMask={true}
+            mask="S9-99"
+            error={errors.issue?.message}
+            {...register("issue")}
           />
         </S.BoxInput>
 
         <S.BoxControls style={{ justifyContent: "flex-end" }}>
           <h4
             onClick={() => {
-              setIssue({ ...issue, isOpen: false });
-              setDoubt({ ...doubt, isOpen: true });
+              setIssue(false);
+              setDoubt(true);
             }}
           >
             Próximo
@@ -71,28 +145,24 @@ export const FormBlock = () => {
             label="Minha dúvida é sobre..."
             placeholder="Ex.: React, Typescript, VS Code..."
             height="3.5rem"
-            value={doubt.value}
-            autoFocus
-            onChange={(e) => {
-              e.preventDefault();
-              setDoubt({ ...doubt, value: e.target.value });
-            }}
+            error={errors.doubt?.message}
+            {...register("doubt")}
           />
         </S.BoxInput>
 
         <S.BoxControls>
           <h4
             onClick={() => {
-              setDoubt({ ...doubt, isOpen: false });
-              setIssue({ ...issue, isOpen: true });
+              setDoubt(false);
+              setIssue(true);
             }}
           >
             Anterior
           </h4>
           <h4
             onClick={() => {
-              setDoubt({ ...doubt, isOpen: false });
-              setSubject({ ...subject, isOpen: true });
+              setDoubt(false);
+              setSubject(true);
             }}
           >
             Próximo
@@ -111,28 +181,24 @@ export const FormBlock = () => {
             label="Assunto"
             placeholder="Ex.: DOM, classes, funções, componentes..."
             height="3.5rem"
-            value={subject.value}
-            autoFocus
-            onChange={(e) => {
-              e.preventDefault();
-              setSubject({ ...subject, value: e.target.value });
-            }}
+            error={errors.subject?.message}
+            {...register("subject")}
           />
         </S.BoxInput>
 
         <S.BoxControls>
           <h4
             onClick={() => {
-              setSubject({ ...subject, isOpen: false });
-              setDoubt({ ...doubt, isOpen: true });
+              setSubject(false);
+              setDoubt(true);
             }}
           >
             Anterior
           </h4>
           <h4
             onClick={() => {
-              setSubject({ ...subject, isOpen: false });
-              setAttempt({ ...attempt, isOpen: true });
+              setSubject(false);
+              setDescription(true);
             }}
           >
             Próximo
@@ -142,39 +208,86 @@ export const FormBlock = () => {
     );
   };
 
-  const BoxAttempt = () => {
+  const BoxDescription = () => {
     return (
       <>
         <p>
-          Digite abaixo uma breve descrição de onde você procurou e suas
-          tentativas.
+          Digite abaixo a descrição mais completa que conseguir de onde você
+          procurou, suas tentativas e sua lógica detalhada.
         </p>
         <S.BoxInput>
           <C.TextArea
             label="O que tentei fazer?"
             placeholder="Ex.: Procurei na documentação e tentei usar tal lógica"
-            value={attempt.value.split("").reverse().join("")}
-            onChange={(e) => {
-              setAttempt({ ...attempt, value: e.target.value });
-            }}
-            // terei de usar o useForm aqui então é melhor criar um schema para todo o formulário e no fim colocar um botão de submit
-            autoFocus
+            height="250px"
+            error={errors.description?.message}
+            {...register("description")}
           />
         </S.BoxInput>
 
         <S.BoxControls>
           <h4
             onClick={() => {
-              setAttempt({ ...attempt, isOpen: false });
-              setSubject({ ...subject, isOpen: true });
+              setDescription(false);
+              setSubject(true);
             }}
           >
             Anterior
           </h4>
           <h4
             onClick={() => {
-              setAttempt({ ...attempt, isOpen: false });
-              setDescription({ ...description, isOpen: true });
+              setDescription(false);
+              setCode(true);
+            }}
+          >
+            Próximo
+          </h4>
+        </S.BoxControls>
+      </>
+    );
+  };
+
+  const BoxCode = () => {
+    return (
+      <>
+        <p>
+          Não é obrigatório mas é interessante compartilhar o código que está
+          causando problemas em sua aplicação então selecione a linguagem e cole
+          no editor o seu código
+        </p>
+        <S.BoxSelect>
+          <C.Select
+            label=""
+            activeOpt={activeOption}
+            options={options}
+            setAction={setActiveOption}
+            height="3.2rem"
+            width="20rem"
+          />
+        </S.BoxSelect>
+        <S.BoxInput>
+          <C.TextArea
+            label="Código"
+            placeholder="Ex.: Procurei na documentação e tentei usar tal lógica"
+            height="250px"
+            error={errors.code?.message}
+            {...register("code")}
+          />
+        </S.BoxInput>
+
+        <S.BoxControls>
+          <h4
+            onClick={() => {
+              setCode(false);
+              setDescription(true);
+            }}
+          >
+            Anterior
+          </h4>
+          <h4
+            onClick={() => {
+              setCode(false);
+              setObs(true);
             }}
           >
             Próximo
@@ -185,11 +298,16 @@ export const FormBlock = () => {
   };
 
   return (
-    <S.Container>
-      {issue.isOpen && <BoxIssue />}
-      {doubt.isOpen && <BoxDoubt />}
-      {subject.isOpen && <BoxSubject />}
-      {attempt.isOpen && <BoxAttempt />}
+    <S.Container
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
+      {issue && <BoxIssue />}
+      {doubt && <BoxDoubt />}
+      {subject && <BoxSubject />}
+      {description && <BoxDescription />}
+      {code && <BoxCode />}
     </S.Container>
   );
 };
