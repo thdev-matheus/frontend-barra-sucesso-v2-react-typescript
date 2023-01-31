@@ -24,17 +24,21 @@ import "prismjs/themes/prism.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { slashQuestionSchema } from "../../Schemas";
+import { FiArrowRightCircle } from "react-icons/fi";
+import { useDarkMode } from "../../Contexts";
 
 export const FormBlock = () => {
-  const [issue, setIssue] = useState<boolean>(false);
+  const [issue, setIssue] = useState<boolean>(true);
   const [doubt, setDoubt] = useState<boolean>(false);
   const [subject, setSubject] = useState<boolean>(false);
   const [description, setDescription] = useState<boolean>(false);
-  const [codeBox, setCodeBox] = useState<boolean>(true);
+  const [codeBox, setCodeBox] = useState<boolean>(false);
   const [obs, setObs] = useState<boolean>(false);
 
   const [activeOption, setActiveOption] = useState<string>("Javascript");
   const [code, setCode] = useState<string>("");
+
+  const { isDarkMode } = useDarkMode();
 
   const options = [
     "CSS",
@@ -161,6 +165,7 @@ export const FormBlock = () => {
             height="3.5rem"
             isMask={true}
             mask="S9-99"
+            defaultValue={getValues("issue") || ""}
             error={errors.issue?.message}
             {...register("issue")}
           />
@@ -190,6 +195,7 @@ export const FormBlock = () => {
             placeholder="Ex.: React, Typescript, VS Code..."
             height="3.5rem"
             error={errors.doubt?.message}
+            defaultValue={getValues("doubt") || ""}
             {...register("doubt")}
           />
         </S.BoxInput>
@@ -225,6 +231,7 @@ export const FormBlock = () => {
             label="Assunto"
             placeholder="Ex.: DOM, classes, funções, componentes..."
             height="3.5rem"
+            defaultValue={getValues("subject") || ""}
             error={errors.subject?.message}
             {...register("subject")}
           />
@@ -264,6 +271,7 @@ export const FormBlock = () => {
             label="O que tentei fazer?"
             placeholder="Ex.: Procurei na documentação e tentei usar tal lógica"
             height="250px"
+            defaultValue={getValues("description") || ""}
             error={errors.description?.message}
             {...register("description")}
           />
@@ -352,17 +360,59 @@ export const FormBlock = () => {
     );
   };
 
+  const BoxObs = () => {
+    return (
+      <>
+        <p>
+          Nesta seção você pode compartilhar qualquer informação extra que pode
+          vir a ajudar o monitor/instrutor que vier lhe atender.
+        </p>
+        <S.BoxInput>
+          <C.TextArea
+            label="Considerações finais"
+            placeholder="Digite alguma observação"
+            defaultValue={getValues("obs") || ""}
+            height="250px"
+            error={errors.obs?.message}
+            {...register("obs")}
+          />
+        </S.BoxInput>
+
+        <S.BoxControls>
+          <h4
+            onClick={() => {
+              setObs(false);
+              setCodeBox(true);
+            }}
+          >
+            Anterior
+          </h4>
+        </S.BoxControls>
+      </>
+    );
+  };
+
   return (
-    <S.Container
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
-    >
+    <S.Container onSubmit={handleSubmit(handleSlashQuestionSubmit)}>
       {issue && <BoxIssue />}
       {doubt && <BoxDoubt />}
       {subject && <BoxSubject />}
       {description && <BoxDescription />}
       {codeBox && <BoxCode />}
+      {obs && (
+        <>
+          <BoxObs />
+          <C.Button
+            label="Finalizar"
+            onAction={handleErrors}
+            icon={FiArrowRightCircle}
+            iconAfter={true}
+            hColor={isDarkMode ? undefined : "#ecf0f1"}
+            hBgColor={isDarkMode ? undefined : "#2c3e50"}
+            radius="2rem"
+          />
+        </>
+      )}
     </S.Container>
   );
 };

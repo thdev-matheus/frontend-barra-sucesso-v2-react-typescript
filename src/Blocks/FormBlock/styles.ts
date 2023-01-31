@@ -17,7 +17,9 @@ export const Container = styled.form`
     align-items: center;
     gap: 1.5rem;
 
-    padding-top: 1rem;
+    padding: 1rem;
+
+    overflow: hidden auto;
 
     background-color: ${(props) => props.theme.backgroundPrimamry};
 
@@ -51,6 +53,8 @@ export const BoxInput = styled.div`
     width: 60%;
 
     & > .editor {
+      min-height: 15.6rem;
+
       border: 1px solid black;
     }
   }
