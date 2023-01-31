@@ -15,6 +15,7 @@ export const Button = ({
   hColor,
   hBgColor,
   radius,
+  type,
 }: T.IButtonProps) => {
   return (
     <S.SButton
@@ -29,6 +30,7 @@ export const Button = ({
       hBgColor={hBgColor}
       radius={radius}
       onClick={onAction}
+      type={type}
     >
       {Icon && <Icon />}
       {label}

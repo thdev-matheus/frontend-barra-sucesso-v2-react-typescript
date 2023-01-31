@@ -3,32 +3,44 @@ import * as T from "./types";
 import * as C from "../../Components";
 import * as S from "./styles";
 
-// import Editor from "react-simple-code-editor";
-// import { highlight, languages } from "prismjs";
-// import "prismjs/components/prism-clike";
-// import "prismjs/components/prism-javascript";
-// import "prismjs/themes/prism.css";
-// import { cursorTo } from "readline";
+import Editor from "react-simple-code-editor";
+import Prism, { highlight, languages } from "prismjs";
+import "prismjs/components/prism-clike";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-docker";
+import "prismjs/components/prism-git";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-markdown";
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-tsx";
+import "prismjs/components/prism-regex";
+import "prismjs/components/prism-sql";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-yaml";
+import "prismjs/themes/prism.css";
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { slashQuestionSchema } from "../../Schemas";
 
 export const FormBlock = () => {
-  const [issue, setIssue] = useState<boolean>(true);
+  const [issue, setIssue] = useState<boolean>(false);
   const [doubt, setDoubt] = useState<boolean>(false);
   const [subject, setSubject] = useState<boolean>(false);
   const [description, setDescription] = useState<boolean>(false);
-  const [code, setCode] = useState<boolean>(false);
+  const [codeBox, setCodeBox] = useState<boolean>(true);
   const [obs, setObs] = useState<boolean>(false);
+
   const [activeOption, setActiveOption] = useState<string>("Javascript");
+  const [code, setCode] = useState<string>("");
 
   const options = [
     "CSS",
     "Django",
     "Docker",
     "Dockerfile",
-    "GIT",
     "HTML",
     "Javascript",
     "JSON",
@@ -43,12 +55,45 @@ export const FormBlock = () => {
     "YAML",
   ];
 
-  const configEditor = () => {};
+  const configEditor = (code: string) => {
+    switch (activeOption) {
+      case "CSS":
+        return highlight(code, Prism.languages.css, "css");
+      case "Django" || "Python":
+        return highlight(code, Prism.languages.py, "python");
+      case "Docker" || "Dockerfile":
+        return highlight(code, languages.dockerfile, "dockerfile");
+      case "HTML":
+        return highlight(code, Prism.languages.html, "html");
+      case "JSON":
+        return highlight(code, Prism.languages.json, "json");
+      case "Markdown":
+        return highlight(code, Prism.languages.md, "markdown");
+      case "React JSX":
+        return highlight(code, Prism.languages.jsx, "javascript");
+      case "React TSX":
+        return highlight(code, Prism.languages.tsx, "typescript");
+      case "Regex":
+        return highlight(code, Prism.languages.regex, "regex");
+      case "SQL":
+        return highlight(code, Prism.languages.sql, "sql");
+      case "Terminal":
+        return highlight(code, Prism.languages.shell, "bash");
+      case "TypeScript":
+        return highlight(code, Prism.languages.ts, "typescript");
+      case "YAML":
+        return highlight(code, Prism.languages.yml, "yml");
+
+      default:
+        return highlight(code, languages.js, "javascript");
+    }
+  };
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    getValues,
   } = useForm<T.ISlashQuestion>({
     resolver: yupResolver(slashQuestionSchema),
     reValidateMode: "onSubmit",
@@ -59,52 +104,51 @@ export const FormBlock = () => {
   };
 
   const handleErrors = () => {
-    if (errors.issue) {
+    const values = getValues();
+    if (!values.issue) {
       setIssue(true);
       setDoubt(false);
       setSubject(false);
       setDescription(false);
-      setCode(false);
+      setCodeBox(false);
       setObs(false);
-    } else if (errors.doubt) {
+    } else if (!values.doubt) {
       setIssue(false);
       setDoubt(true);
       setSubject(false);
       setDescription(false);
-      setCode(false);
+      setCodeBox(false);
       setObs(false);
-    } else if (errors.subject) {
+    } else if (!values.subject) {
       setIssue(false);
       setDoubt(false);
       setSubject(true);
       setDescription(false);
-      setCode(false);
+      setCodeBox(false);
       setObs(false);
-    } else if (errors.description) {
+    } else if (!values.description) {
       setIssue(false);
       setDoubt(false);
       setSubject(false);
       setDescription(true);
-      setCode(false);
+      setCodeBox(false);
       setObs(false);
-    } else if (errors.code) {
+    } else if (!values.code) {
       setIssue(false);
       setDoubt(false);
       setSubject(false);
       setDescription(false);
-      setCode(true);
+      setCodeBox(true);
       setObs(false);
-    } else if (errors.obs) {
+    } else if (!values.obs) {
       setIssue(false);
       setDoubt(false);
       setSubject(false);
       setDescription(false);
-      setCode(false);
+      setCodeBox(false);
       setObs(true);
     }
   };
-
-  handleErrors();
 
   const BoxIssue = () => {
     return (
@@ -237,7 +281,7 @@ export const FormBlock = () => {
           <h4
             onClick={() => {
               setDescription(false);
-              setCode(true);
+              setCodeBox(true);
             }}
           >
             Próximo
@@ -266,19 +310,30 @@ export const FormBlock = () => {
           />
         </S.BoxSelect>
         <S.BoxInput>
-          <C.TextArea
-            label="Código"
-            placeholder="Ex.: Procurei na documentação e tentei usar tal lógica"
-            height="250px"
-            error={errors.code?.message}
+          <Editor
             {...register("code")}
+            className="editor"
+            value={code}
+            autoFocus
+            onValueChange={(code) => setCode(code)}
+            highlight={(code) => configEditor(code)}
+            onFocus={(e) => {
+              (e.target as HTMLTextAreaElement).selectionStart = (
+                e.target as HTMLTextAreaElement
+              ).selectionEnd = (e.target as HTMLTextAreaElement).value.length;
+            }}
+            padding={10}
+            style={{
+              fontFamily: '"Fira code", "Fira Mono", monospace',
+              fontSize: 12,
+            }}
           />
         </S.BoxInput>
 
         <S.BoxControls>
           <h4
             onClick={() => {
-              setCode(false);
+              setCodeBox(false);
               setDescription(true);
             }}
           >
@@ -286,7 +341,7 @@ export const FormBlock = () => {
           </h4>
           <h4
             onClick={() => {
-              setCode(false);
+              setCodeBox(false);
               setObs(true);
             }}
           >
@@ -307,7 +362,7 @@ export const FormBlock = () => {
       {doubt && <BoxDoubt />}
       {subject && <BoxSubject />}
       {description && <BoxDescription />}
-      {code && <BoxCode />}
+      {codeBox && <BoxCode />}
     </S.Container>
   );
 };

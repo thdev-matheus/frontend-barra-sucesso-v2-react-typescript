@@ -6,6 +6,7 @@ export interface IButtonProps {
   icon?: IconType;
   iconAfter?: boolean;
   iconSize?: string;
+  type?: "button" | "submit" | "reset" | undefined;
 
   width?: string;
   height?: string;

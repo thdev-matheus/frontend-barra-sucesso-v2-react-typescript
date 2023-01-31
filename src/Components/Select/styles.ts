@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import * as T from "./types";
 
-export const Container = styled.div<T.IContainerProps>`
+export const Container = styled.section<T.IContainerProps>`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height};
 
@@ -64,6 +64,8 @@ export const Container = styled.div<T.IContainerProps>`
       flex-wrap: wrap;
       justify-content: center;
       gap: 0.8rem;
+
+      z-index: 9000;
 
       padding: 1rem;
       margin-top: 1rem;

@@ -13,9 +13,11 @@ export const Container = styled.form`
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+
+    padding-top: 1rem;
 
     background-color: ${(props) => props.theme.backgroundPrimamry};
 
@@ -47,6 +49,10 @@ export const BoxInput = styled.div`
 
   @media (min-width: 1024px) {
     width: 60%;
+
+    & > .editor {
+      border: 1px solid black;
+    }
   }
 
   @media (min-width: 1440px) {
