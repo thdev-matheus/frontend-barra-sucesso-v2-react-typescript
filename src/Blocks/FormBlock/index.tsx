@@ -303,12 +303,9 @@ export const FormBlock = () => {
           </p>
           <S.BoxSelect>
             <C.Select
-              label=""
               activeOpt={activeOption}
               options={options}
               setAction={setActiveOption}
-              height="3.2rem"
-              width="20rem"
             />
           </S.BoxSelect>
           <S.BoxInput>

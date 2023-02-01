@@ -53,7 +53,7 @@ export const BoxInput = styled.div`
     width: 60%;
 
     & > .editor {
-      min-height: 15.6rem;
+      min-height: 14rem;
 
       border: 1px solid black;
     }

@@ -14,38 +14,61 @@ export const Select = ({
   radius,
   color,
   bgColor,
+  fontSize,
+  hBgColor,
+  hcolor,
 }: T.ISelectProps) => {
-  const [display, setDisplay] = useState<string>("none");
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggleIsOpen = () => setIsOpen(!isOpen);
 
   return (
-    <S.Container
-      width={width}
-      height={height}
-      margin={margin}
-      radius={radius}
-      color={color}
-      bgColor={bgColor}
-    >
-      <span>{label}</span>
-      <Dropdown>
-        <Dropdown.Toggle onClick={() => setDisplay("flex")}>
-          {activeOpt}
-        </Dropdown.Toggle>
+    <S.Container color={color}>
+      {label && <span>{label}</span>}
+      <S.Dropdown width={width} height={height}>
+        <S.Toggle
+          radius={radius}
+          color={color}
+          bgColor={bgColor}
+          fontSize={fontSize}
+          onClick={toggleIsOpen}
+          hColor={hcolor}
+          hBgColor={hBgColor}
+        >
+          <span>{activeOpt}</span>
+        </S.Toggle>
 
-        <Dropdown.Menu style={{ display: display }}>
-          {options.map((opt, i) => (
-            <Dropdown.Item
-              key={i}
-              onClick={() => {
-                setAction(opt);
-                setDisplay("none");
-              }}
-            >
-              {opt}
-            </Dropdown.Item>
-          ))}
-        </Dropdown.Menu>
-      </Dropdown>
+        {isOpen && (
+          <S.Menu
+            width={width}
+            height={height}
+            margin={margin}
+            transition={{
+              duration: 0.8,
+            }}
+            initial={{
+              opacity: 0,
+              y: 50,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+          >
+            {options.map((option, index) => (
+              <span
+                key={index}
+                onClick={() => {
+                  setAction(option);
+                  setIsOpen(false);
+                }}
+              >
+                {option}
+              </span>
+            ))}
+          </S.Menu>
+        )}
+      </S.Dropdown>
     </S.Container>
   );
 };

@@ -1,17 +1,8 @@
 import styled from "styled-components";
 import * as T from "./types";
+import { motion } from "framer-motion";
 
 export const Container = styled.section<T.IContainerProps>`
-  width: ${(props) => props.width || "100%"};
-  height: ${(props) => props.height};
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  padding-top: 1.5rem;
-
   & > span {
     padding-left: 1rem;
     font-size: 12pt;
@@ -19,77 +10,89 @@ export const Container = styled.section<T.IContainerProps>`
 
     color: ${(props) => props.color || props.theme.textPrimary};
   }
+`;
 
-  & > div {
-    min-width: ${(props) => props.width || "100%"};
-    height: ${(props) => props.height || "2.5rem"};
+export const Dropdown = styled.div<T.IContainerProps>`
+  width: ${(props) => props.width || "20rem"};
+  height: ${(props) => props.height || "4rem"};
 
-    & > button {
-      min-width: ${(props) => props.width || "100%"};
-      height: ${(props) => props.height || "2rem"};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
+  position: relative;
+`;
 
-      border: 1px solid ${(props) => props.color || props.theme.textPrimary};
-      border-radius: ${(props) => props.radius || "0.8rem"};
+export const Toggle = styled.div<T.IContainerProps>`
+  min-width: 100%;
+  min-height: 100%;
 
-      font-size: 13pt;
-      font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-      color: ${(props) => props.color || props.theme.textPrimary};
-      background-color: transparent;
+  position: relative;
+  top: 0;
 
-      :hover {
-        border: 1px solid ${(props) => props.color || props.theme.textPrimary};
+  border-radius: ${(props) => props.radius || "0.8rem"};
 
-        color: ${(props) => props.color || props.theme.textPrimary};
-        background-color: transparent;
-      }
+  background-color: ${(props) => props.bgColor || props.theme.tertiary};
+  color: ${(props) => props.color || props.theme.black};
 
-      :focus {
-        border: 1px solid ${(props) => props.color || props.theme.textPrimary};
+  font-size: ${(props) => props.fontSize || "14pt"};
+  font-weight: bold;
 
-        color: ${(props) => props.color || props.theme.textPrimary};
-        background-color: transparent;
-      }
-    }
+  cursor: pointer;
 
-    & > div {
-      width: 20rem;
+  transition: 0.8s;
 
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.8rem;
+  :hover {
+    background-color: ${(props) => props.hBgColor || props.theme.primary};
+    color: ${(props) => props.hColor || props.theme.black};
 
-      z-index: 9000;
+    transition: 1.5s;
+  }
+`;
 
-      padding: 1rem;
-      margin-top: 1rem;
+export const Menu = styled(motion.div)<T.IContainerProps>`
+  width: ${(props) => props.width || "20rem"};
 
-      border-radius: 0.8rem;
-      border: 2px solid ${(props) => props.theme.textPrimary};
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
 
-      background-color: ${(props) => props.theme.backgroundPrimary};
+  padding: 1.5rem;
+  margin: ${(props) => props.theme.margin || ".5rem"};
 
-      & > a {
-        padding: 0.5rem 1rem;
+  position: absolute;
+  top: ${(props) => props.height || "4rem"};
+  z-index: 9999;
 
-        border-radius: 0.5rem;
+  border-radius: 1rem 3rem;
 
-        font-size: 12pt;
-        font-weight: bold;
+  background-color: ${(props) => props.theme.backgroundPrimary};
 
-        text-decoration: none;
+  box-shadow: 2px 2px 5px 0 ${(props) => props.theme.backgroundTertiary};
 
-        box-shadow: 2px 2px 5px 0 ${(props) => props.theme.backgroundTertiary};
+  & > span {
+    padding: 0.5rem;
 
-        color: ${(props) => props.theme.textPrimary};
-        background-color: ${(props) => props.theme.backgroundSecondary};
-      }
+    border-radius: 0.5rem;
+
+    background-color: ${(props) => props.theme.backgroundSecondary};
+    box-shadow: 2px 2px 5px 0 ${(props) => props.theme.backgroundTertiary};
+
+    cursor: pointer;
+
+    transition: 0.8s;
+
+    :hover {
+      transform: scale(1.1) rotate(15deg);
+
+      transition: 0.8s;
     }
   }
 `;

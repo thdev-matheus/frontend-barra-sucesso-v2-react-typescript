@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 export interface ISelectProps {
-  label: string;
+  label?: string;
   setAction: Dispatch<SetStateAction<string>>;
   activeOpt: string;
   options: string[];
@@ -13,8 +13,13 @@ export interface ISelectProps {
 
   radius?: string;
 
+  fontSize?: string;
+
   color?: string;
   bgColor?: string;
+
+  hcolor?: string;
+  hBgColor?: string;
 }
 
 export interface IContainerProps {
@@ -25,6 +30,11 @@ export interface IContainerProps {
 
   radius?: string;
 
+  fontSize?: string;
+
   color?: string;
   bgColor?: string;
+
+  hColor?: string;
+  hBgColor?: string;
 }
