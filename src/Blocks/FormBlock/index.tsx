@@ -25,7 +25,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { slashQuestionSchema } from "../../Schemas";
 import { FiArrowRightCircle } from "react-icons/fi";
-import { useDarkMode } from "../../Contexts";
+import { useDarkMode, useSlashQuestion } from "../../Contexts";
+import { toast } from "react-toastify";
 
 export const FormBlock = () => {
   const [issue, setIssue] = useState<boolean>(true);
@@ -39,6 +40,7 @@ export const FormBlock = () => {
   const [code, setCode] = useState<string>("");
 
   const { isDarkMode } = useDarkMode();
+  const { editSlashQuestion } = useSlashQuestion();
 
   const options = [
     "CSS",
@@ -107,7 +109,8 @@ export const FormBlock = () => {
   const handleSlashQuestionSubmit = (data: T.ISlashQuestion) => {
     data.code = code;
     data.language = configEditor(code);
-    console.log(data);
+
+    toast.success("Sucesso");
   };
 
   const handleErrors = () => {
