@@ -10,24 +10,12 @@ import * as B from "../../Blocks";
 // import { useState } from "react";
 
 export const FormPage = () => {
-  // const [code, setCode] = useState(`function add(a, b) {\n  return a + b;\n}`);
 
   return (
     <S.Container>
       <B.HeaderBlock />
       <B.FormBlock />
-      {/* <Editor
-        value={code}
-        onValueChange={(code) => setCode(code)}
-        highlight={(code) => highlight(code, languages.js, "jsx")}
-        padding={10}
-        style={{
-          fontFamily: '"Fira code", "Fira Mono", monospace',
-          fontSize: 12,
-        }}
-      /> */}
 
-      <B.FooterBlock />
       <B.CreditBlock />
     </S.Container>
   );
