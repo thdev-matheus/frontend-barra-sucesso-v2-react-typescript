@@ -22,6 +22,8 @@ export const Select = ({
 
   const toggleIsOpen = () => setIsOpen(!isOpen);
 
+  console.log(isOpen);
+
   return (
     <S.Container color={color}>
       {label && <span>{label}</span>}

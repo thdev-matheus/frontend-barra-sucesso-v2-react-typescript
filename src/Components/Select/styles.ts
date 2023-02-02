@@ -3,6 +3,7 @@ import * as T from "./types";
 import { motion } from "framer-motion";
 
 export const Container = styled.section<T.IContainerProps>`
+  width: 100%;
   & > span {
     padding-left: 1rem;
     font-size: 12pt;
@@ -13,7 +14,7 @@ export const Container = styled.section<T.IContainerProps>`
 `;
 
 export const Dropdown = styled.div<T.IContainerProps>`
-  width: ${(props) => props.width || "20rem"};
+  width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "4rem"};
 
   display: flex;
@@ -56,7 +57,7 @@ export const Toggle = styled.div<T.IContainerProps>`
 `;
 
 export const Menu = styled(motion.div)<T.IContainerProps>`
-  width: ${(props) => props.width || "20rem"};
+  min-width: ${(props) => props.width || "100%"};
 
   display: flex;
   flex-wrap: wrap;
