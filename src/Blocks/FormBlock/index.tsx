@@ -27,6 +27,7 @@ import { slashQuestionSchema } from "../../Schemas";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { useDarkMode, useSlashQuestion } from "../../Contexts";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export const FormBlock = () => {
   const [issue, setIssue] = useState<boolean>(true);
@@ -38,6 +39,12 @@ export const FormBlock = () => {
 
   const [activeOption, setActiveOption] = useState<string>("Javascript");
   const [code, setCode] = useState<string>("");
+
+  const navigate = useNavigate();
+
+  const goTo = (path: string) => {
+    navigate(path);
+  };
 
   const { isDarkMode } = useDarkMode();
   const { editSlashQuestion } = useSlashQuestion();
@@ -111,6 +118,10 @@ export const FormBlock = () => {
     data.language = configEditor(code);
 
     toast.success("Sucesso");
+
+    editSlashQuestion(data);
+
+    goTo("/slash-question");
   };
 
   const handleErrors = () => {
