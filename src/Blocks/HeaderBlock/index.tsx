@@ -7,8 +7,6 @@ import { useMediaQuery } from "../../Contexts";
 import { FaWpforms } from "react-icons/fa";
 import { CgMenuRight } from "react-icons/cg";
 
-import { motion } from "framer-motion";
-
 import * as S from "./styles";
 import * as C from "../../Components";
 

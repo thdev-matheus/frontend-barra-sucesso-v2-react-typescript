@@ -5,5 +5,4 @@ export interface ISlashQuestion {
   description: string;
   code?: string;
   obs?: string;
-  language?: string;
 }

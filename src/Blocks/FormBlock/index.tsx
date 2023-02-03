@@ -25,7 +25,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { slashQuestionSchema } from "../../Schemas";
 import { FiArrowRightCircle } from "react-icons/fi";
-import { useDarkMode, useMediaQuery, useSlashQuestion } from "../../Contexts";
+import { useDarkMode, useSlashQuestion } from "../../Contexts";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
@@ -48,7 +48,6 @@ export const FormBlock = () => {
 
   const { isDarkMode } = useDarkMode();
   const { editSlashQuestion } = useSlashQuestion();
-  const { widthScreen } = useMediaQuery();
 
   const options = [
     "CSS",
@@ -116,7 +115,6 @@ export const FormBlock = () => {
 
   const handleSlashQuestionSubmit = (data: T.ISlashQuestion) => {
     data.code = code;
-    data.language = configEditor(code);
 
     toast.success("Sucesso");
 
