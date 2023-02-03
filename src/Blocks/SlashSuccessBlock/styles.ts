@@ -98,6 +98,21 @@ export const BoxTextCopy = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    & > .editor {
+      width: 100%;
+      /* min-height: 14rem; */
+
+      border-radius: 0.8rem;
+
+      font-weight: bold;
+
+      box-shadow: 2px 2px 5px 0 ${(props) => props.theme.gray};
+
+      background-color: ${(props) => props.theme.backgroundTertiary};
+      color: ${(props) => props.theme.white};
+      transform: translateY(20px);
+    }
   }
 
   @media (min-width: 1440px) {
@@ -128,6 +143,7 @@ export const BoxCopy = styled.div`
       position: relative;
       right: 15px;
       bottom: -35px;
+      z-index: 8999;
 
       color: ${(props) => props.theme.tertiary};
 
