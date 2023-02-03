@@ -9,6 +9,7 @@ import copy from "copy-to-clipboard";
 import * as S from "./styles";
 import * as C from "../../Components";
 import { useNavigate } from "react-router-dom";
+import Prism, { highlight, languages } from "prismjs";
 
 export const SlashSuccessBlock = () => {
   const { slashQuestion } = useSlashQuestion();
@@ -17,6 +18,40 @@ export const SlashSuccessBlock = () => {
   const navigate = useNavigate();
 
   const goTo = (path: string) => navigate(path);
+
+  const configEditor = (code: string) => {
+    switch (slashQuestion.language) {
+      case "CSS":
+        return highlight(code, Prism.languages.css, "css");
+      case "Django" || "Python":
+        return highlight(code, Prism.languages.py, "python");
+      case "Docker" || "Dockerfile":
+        return highlight(code, Prism.languages.dockerfile, "dockerfile");
+      case "HTML":
+        return highlight(code, Prism.languages.html, "html");
+      case "JSON":
+        return highlight(code, Prism.languages.json, "json");
+      case "Markdown":
+        return highlight(code, Prism.languages.md, "markdown");
+      case "React JSX":
+        return highlight(code, Prism.languages.jsx, "javascript");
+      case "React TSX":
+        return highlight(code, Prism.languages.tsx, "typescript");
+      case "Regex":
+        return highlight(code, Prism.languages.regex, "regex");
+      case "SQL":
+        return highlight(code, Prism.languages.sql, "sql");
+      case "Terminal":
+        return highlight(code, Prism.languages.shell, "bash");
+      case "TypeScript":
+        return highlight(code, Prism.languages.ts, "typescript");
+      case "YAML":
+        return highlight(code, Prism.languages.yml, "yml");
+
+      default:
+        return highlight(code, languages.js, "javascript");
+    }
+  };
 
   const copyToClipboard = (text: string) => {
     copy(text);

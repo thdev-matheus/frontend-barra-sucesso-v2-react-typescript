@@ -115,6 +115,7 @@ export const FormBlock = () => {
 
   const handleSlashQuestionSubmit = (data: T.ISlashQuestion) => {
     data.code = code;
+    data.language = activeOption;
 
     toast.success("Sucesso");
 
