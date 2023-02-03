@@ -144,12 +144,6 @@ export const SlashSuccessBlock = () => {
                 onClick={() => copyToClipboard(code)}
               />
             </S.BoxCopy>
-            {/* <C.TextArea
-              label="Código"
-              defaultValue={slashQuestion.code}
-              width="100%"
-              height="50vh"
-            /> */}
             <Editor
               className="editor"
               value={code}

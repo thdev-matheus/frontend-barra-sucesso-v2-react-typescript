@@ -5,9 +5,6 @@ export const Container = styled.section`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100vw;
 
     display: flex;
@@ -31,9 +28,6 @@ export const BoxDescriptions = styled.div`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 80%;
 
     display: flex;
@@ -89,9 +83,6 @@ export const BoxTextCopy = styled.div`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100%;
 
     display: flex;
@@ -127,9 +118,6 @@ export const BoxCopy = styled.div`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100%;
     height: 0;
 
