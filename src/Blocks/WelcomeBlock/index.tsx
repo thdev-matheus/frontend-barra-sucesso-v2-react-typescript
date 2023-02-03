@@ -116,7 +116,7 @@ export const WelcomeBlock = () => {
         >
           <C.Button
             label="/Pergunta"
-            onAction={() => goTo("/about-app")}
+            onAction={() => goTo("/form")}
             icon={FaWpforms}
             iconAfter={true}
             hColor={isDarkMode ? undefined : "#ecf0f1"}

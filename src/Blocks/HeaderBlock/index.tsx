@@ -97,6 +97,7 @@ export const HeaderBlock = () => {
                 : "https://i.ibb.co/SBsZ30n/logo-light.png"
             }
             alt="logo"
+            onClick={() => goTo("/")}
           />
         </S.BoxLogo>
 
