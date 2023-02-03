@@ -8,6 +8,8 @@ import { ContactBlock } from "./ContactBlock";
 import { FormBlock } from "./FormBlock";
 import { SlashSuccessBlock } from "./SlashSuccessBlock";
 
+import { HistoryAppBlock } from "./HistoryAppBlock";
+
 export {
   HeaderBlock,
   WelcomeBlock,
@@ -18,4 +20,5 @@ export {
   ContactBlock,
   FormBlock,
   SlashSuccessBlock,
+  HistoryAppBlock,
 };

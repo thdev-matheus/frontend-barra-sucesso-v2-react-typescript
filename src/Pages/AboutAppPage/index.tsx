@@ -1,7 +1,14 @@
+import * as S from "./styles";
+import * as B from "../../Blocks";
+
 export const AboutAppPage = () => {
   return (
-    <>
-      <h1>AboutAppPage</h1>
-    </>
+    <S.Container>
+      <B.HeaderBlock />
+      <B.HistoryAppBlock />
+
+      <B.FooterBlock />
+      <B.CreditBlock />
+    </S.Container>
   );
 };
