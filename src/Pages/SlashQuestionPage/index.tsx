@@ -1,7 +1,12 @@
+import * as S from "./styles";
+import * as B from "../../Blocks";
+
 export const SlashQuestionPage = () => {
   return (
-    <>
-      <h1>SlashQuestionPage</h1>
-    </>
+    <S.Container>
+      <B.HeaderBlock />
+      <B.SlashSuccessBlock />
+      <B.CreditBlock />
+    </S.Container>
   );
 };

@@ -38,6 +38,11 @@ export const router = createBrowserRouter([
     errorElement: <P.ErrorPage />,
   },
   {
+    path: "/instructors-hall",
+    element: <P.InstructorsHallPage />,
+    errorElement: <P.ErrorPage />,
+  },
+  {
     path: "/suggestions",
     element: <P.SuggestionsPage />,
     errorElement: <P.ErrorPage />,

@@ -6,6 +6,7 @@ import { CreditBlock } from "./CreditBlock";
 import { AboutAppBlock } from "./AboutAppBlock";
 import { ContactBlock } from "./ContactBlock";
 import { FormBlock } from "./FormBlock";
+import { SlashSuccessBlock } from "./SlashSuccessBlock";
 
 export {
   HeaderBlock,
@@ -16,4 +17,5 @@ export {
   AboutAppBlock,
   ContactBlock,
   FormBlock,
+  SlashSuccessBlock,
 };
