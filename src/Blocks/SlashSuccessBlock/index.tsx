@@ -2,6 +2,24 @@
 import { useEffect, useState } from "react";
 import { useSlashQuestion } from "../../Contexts";
 
+import Editor from "react-simple-code-editor";
+import Prism, { highlight, languages } from "prismjs";
+import "prismjs/components/prism-clike";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-docker";
+import "prismjs/components/prism-git";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-markdown";
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-tsx";
+import "prismjs/components/prism-regex";
+import "prismjs/components/prism-sql";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-yaml";
+import "prismjs/themes/prism.css";
+
 import { toast } from "react-toastify";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import copy from "copy-to-clipboard";
@@ -13,10 +31,45 @@ import { useNavigate } from "react-router-dom";
 export const SlashSuccessBlock = () => {
   const { slashQuestion } = useSlashQuestion();
   const [slashSuccess, setSlashSuccess] = useState<string>("");
+  const [code, setCode] = useState<string>("");
 
   const navigate = useNavigate();
 
   const goTo = (path: string) => navigate(path);
+
+  const configEditor = (code: string) => {
+    switch (slashQuestion.language) {
+      case "CSS":
+        return highlight(code, Prism.languages.css, "css");
+      case "Django" || "Python":
+        return highlight(code, Prism.languages.py, "python");
+      case "Docker" || "Dockerfile":
+        return highlight(code, Prism.languages.dockerfile, "dockerfile");
+      case "HTML":
+        return highlight(code, Prism.languages.html, "html");
+      case "JSON":
+        return highlight(code, Prism.languages.json, "json");
+      case "Markdown":
+        return highlight(code, Prism.languages.md, "markdown");
+      case "React JSX":
+        return highlight(code, Prism.languages.jsx, "javascript");
+      case "React TSX":
+        return highlight(code, Prism.languages.tsx, "typescript");
+      case "Regex":
+        return highlight(code, Prism.languages.regex, "regex");
+      case "SQL":
+        return highlight(code, Prism.languages.sql, "sql");
+      case "Terminal":
+        return highlight(code, Prism.languages.shell, "bash");
+      case "TypeScript":
+        return highlight(code, Prism.languages.ts, "typescript");
+      case "YAML":
+        return highlight(code, Prism.languages.yml, "yml");
+
+      default:
+        return highlight(code, languages.js, "javascript");
+    }
+  };
 
   const copyToClipboard = (text: string) => {
     copy(text);
@@ -37,6 +90,7 @@ export const SlashSuccessBlock = () => {
     }`;
 
     setSlashSuccess(textSlashSuccess);
+    slashQuestion.code && setCode(slashQuestion.code);
   }, []);
 
   return (
@@ -87,14 +141,25 @@ export const SlashSuccessBlock = () => {
             <S.BoxCopy>
               <HiOutlineClipboardDocumentList
                 title="Copiar para a área de transferência"
-                onClick={() => copyToClipboard(slashQuestion.code!)}
+                onClick={() => copyToClipboard(code)}
               />
             </S.BoxCopy>
-            <C.TextArea
-              label="Código"
-              defaultValue={slashQuestion.code}
-              width="100%"
-              height="50vh"
+            <Editor
+              className="editor"
+              value={code}
+              autoFocus
+              onValueChange={(code) => setCode(code)}
+              highlight={(code) => configEditor(code)}
+              onFocus={(e) => {
+                (e.target as HTMLTextAreaElement).selectionStart = (
+                  e.target as HTMLTextAreaElement
+                ).selectionEnd = (e.target as HTMLTextAreaElement).value.length;
+              }}
+              padding={10}
+              style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 12,
+              }}
             />
           </S.BoxTextCopy>
         </>

@@ -25,7 +25,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { slashQuestionSchema } from "../../Schemas";
 import { FiArrowRightCircle } from "react-icons/fi";
-import { useDarkMode, useMediaQuery, useSlashQuestion } from "../../Contexts";
+import { useDarkMode, useSlashQuestion } from "../../Contexts";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
@@ -48,7 +48,6 @@ export const FormBlock = () => {
 
   const { isDarkMode } = useDarkMode();
   const { editSlashQuestion } = useSlashQuestion();
-  const { widthScreen } = useMediaQuery();
 
   const options = [
     "CSS",
@@ -116,7 +115,7 @@ export const FormBlock = () => {
 
   const handleSlashQuestionSubmit = (data: T.ISlashQuestion) => {
     data.code = code;
-    data.language = configEditor(code);
+    data.language = activeOption;
 
     toast.success("Sucesso");
 
@@ -124,39 +123,6 @@ export const FormBlock = () => {
 
     goTo("/slash-question");
   };
-
-  // const handleErrors = () => {
-  //   const values = getValues();
-  //   if (!values.issue) {
-  //     setIssue(true);
-  //     setDoubt(false);
-  //     setSubject(false);
-  //     setDescription(false);
-  //     setCodeBox(false);
-  //     setObs(false);
-  //   } else if (!values.doubt) {
-  //     setIssue(false);
-  //     setDoubt(true);
-  //     setSubject(false);
-  //     setDescription(false);
-  //     setCodeBox(false);
-  //     setObs(false);
-  //   } else if (!values.subject) {
-  //     setIssue(false);
-  //     setDoubt(false);
-  //     setSubject(true);
-  //     setDescription(false);
-  //     setCodeBox(false);
-  //     setObs(false);
-  //   } else if (!values.description) {
-  //     setIssue(false);
-  //     setDoubt(false);
-  //     setSubject(false);
-  //     setDescription(true);
-  //     setCodeBox(false);
-  //     setObs(false);
-  //   }
-  // };
 
   const verifyIssue = () => {
     if (!getValues().issue) {

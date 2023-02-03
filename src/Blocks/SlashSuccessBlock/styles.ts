@@ -2,12 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100vw;
 
     display: flex;
@@ -16,25 +10,17 @@ export const Container = styled.section`
     align-items: center;
     gap: 1rem;
 
+    padding: 0.5rem 2% 2rem;
+  }
+
+  @media (min-width: 767px) {
     padding: 3rem 10%;
-  }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
   }
 `;
 
 export const BoxDescriptions = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 80%;
+    width: 90%;
 
     display: flex;
     flex-direction: column;
@@ -44,7 +30,7 @@ export const BoxDescriptions = styled.div`
 
     text-align: center;
 
-    margin-top: 2rem;
+    margin-top: 0.5rem;
 
     & > h2 {
       margin-bottom: 1rem;
@@ -56,7 +42,7 @@ export const BoxDescriptions = styled.div`
     }
 
     & > p {
-      font-size: 12pt;
+      font-size: 10pt;
       font-weight: bold;
 
       color: ${(props) => props.theme.textPrimary};
@@ -77,44 +63,54 @@ export const BoxDescriptions = styled.div`
     }
   }
 
-  @media (min-width: 1440px) {
-  }
+  @media (min-width: 767px) {
+    width: 80%;
 
-  @media (min-width: 1900px) {
+    margin-top: 2rem;
+
+    & > p {
+      font-size: 12pt;
+    }
   }
 `;
 
 export const BoxTextCopy = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 100%;
+    width: 90%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    & > .editor {
+      width: 100%;
+
+      margin-bottom: 1rem;
+
+      border-radius: 0.8rem;
+
+      font-weight: bold;
+
+      box-shadow: 2px 2px 5px 0 ${(props) => props.theme.gray};
+
+      background-color: ${(props) => props.theme.backgroundTertiary};
+      color: ${(props) => props.theme.white};
+      transform: translateY(20px);
+    }
   }
 
-  @media (min-width: 1440px) {
-  }
+  @media (min-width: 767px) {
+    width: 100%;
 
-  @media (min-width: 1900px) {
+    & > .editor {
+      width: 100%;
+    }
   }
 `;
 
 export const BoxCopy = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100%;
     height: 0;
 
@@ -128,6 +124,7 @@ export const BoxCopy = styled.div`
       position: relative;
       right: 15px;
       bottom: -35px;
+      z-index: 8999;
 
       color: ${(props) => props.theme.tertiary};
 
@@ -148,12 +145,6 @@ export const BoxCopy = styled.div`
         color: ${(props) => props.theme.primary};
       }
     }
-  }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
   }
 
   @keyframes shake {
