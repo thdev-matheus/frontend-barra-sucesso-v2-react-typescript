@@ -4,6 +4,7 @@ import { SlashQuestionPage } from "./SlashQuestionPage";
 import { AboutMePage } from "./AboutMePage";
 import { AboutAppPage } from "./AboutAppPage";
 import { DevsHallPage } from "./DevsHallPage";
+import { InstructorsHallPage } from "./InstructorsHallPage";
 import { SuggestionsPage } from "./SuggestionPage";
 import { ContributePage } from "./ContributePage";
 
@@ -19,4 +20,5 @@ export {
   DevsHallPage,
   SuggestionsPage,
   ContributePage,
+  InstructorsHallPage,
 };
