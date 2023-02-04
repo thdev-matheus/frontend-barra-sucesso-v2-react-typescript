@@ -19,7 +19,7 @@ export const HomePage = () => {
       <B.AboutMeBlock />
       <B.AboutAppBlock />
       <B.ContactBlock />
-      <B.FooterBlock />
+      <B.FooterBlock identifierTo="#home" />
       <B.CreditBlock />
     </S.Container>
   );

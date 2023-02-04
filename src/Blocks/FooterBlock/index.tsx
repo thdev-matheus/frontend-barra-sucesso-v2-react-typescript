@@ -1,4 +1,6 @@
 import * as S from "./styles";
+import * as T from "./types";
+
 import {
   FiInstagram,
   FiTwitter,
@@ -9,7 +11,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 
-export const FooterBlock = () => {
+export const FooterBlock = ({ identifierTo }: T.IFooterProps) => {
   const navigate = useNavigate();
 
   const goTo = (path: string) => navigate(path);
@@ -86,7 +88,7 @@ export const FooterBlock = () => {
       </S.BoxLinks>
 
       <S.BoxButton>
-        <a href="#home">
+        <a href={identifierTo}>
           <div>
             <FiArrowUpCircle />
           </div>

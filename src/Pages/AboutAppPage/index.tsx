@@ -7,7 +7,7 @@ export const AboutAppPage = () => {
       <B.HeaderBlock />
       <B.HistoryAppBlock />
 
-      <B.FooterBlock />
+      <B.FooterBlock identifierTo="#homeAboutApp" />
       <B.CreditBlock />
     </S.Container>
   );
