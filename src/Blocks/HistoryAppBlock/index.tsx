@@ -38,13 +38,13 @@ export const HistoryAppBlock = () => {
           para fazer o mínimo, por isso deixei a idéia guardada.
         </p>
         <p>
-          Foi quando estava na metade do 3º módulo (módulo de React.JS), com
-          devs mandando o mesmo tipo de dúvida que não explica muita coisa, que
-          eu juntei o conhecimento necessário para começar o projeto. E assim
-          foi criada a versão 1.0.0 do app /sucesso que você pode conferir
-          clicando no botão abaixo. Mas já vão me perdoando pois a aplicação não
-          segue regras e basicamente é o ósseo da solução pra um problema e nada
-          mais do que isso.
+          Foi quando estava na metade do 3º módulo (módulo de React.JS), sendo
+          monitor do M2, com devs mandando o mesmo tipo de dúvida que não
+          explica muita coisa, que eu juntei o conhecimento necessário para
+          começar o projeto. E assim foi criada a versão 1.0.0 do app /sucesso
+          que você pode conferir clicando no botão abaixo. Mas já vão me
+          perdoando pois a aplicação não segue regras e basicamente é o ósseo da
+          solução pra um problema e nada mais do que isso.
         </p>
       </S.BoxParagraph>
 
