@@ -108,6 +108,12 @@ export const BoxIcons = styled.div`
 
   @media (min-width: 767px) {
     justify-content: flex-start;
+    gap: 0.7rem;
+
+    & > a > svg {
+      width: 25px;
+      height: 25px;
+    }
   }
 
   @media (min-width: 1024px) {
