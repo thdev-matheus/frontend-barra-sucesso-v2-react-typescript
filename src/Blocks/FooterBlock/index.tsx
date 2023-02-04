@@ -7,6 +7,7 @@ import {
   FiArrowUpCircle,
 } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const FooterBlock = () => {
   const navigate = useNavigate();
@@ -45,6 +46,13 @@ export const FooterBlock = () => {
             rel="noreferrer"
           >
             <FiGithub color="#000" />
+          </a>
+          <a
+            href="https://wa.me/5581996336588"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaWhatsapp color="#4cd964" />
           </a>
         </S.BoxIcons>
       </S.BoxSocial>
