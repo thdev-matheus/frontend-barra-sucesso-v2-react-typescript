@@ -1,7 +1,19 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.section`
   @media (min-width: 320px) {
+    width: 100vw;
+    height: 130rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem 0 4rem;
+
+    scroll-margin-top: 5rem;
   }
 
   @media (min-width: 767px) {
@@ -30,6 +42,17 @@ export const Container = styled.div`
 
 export const BoxTitle = styled.div`
   @media (min-width: 320px) {
+    width: 90%;
+    margin: 1rem 0;
+
+    & > h1 {
+      font-size: 18pt;
+      font-weight: bold;
+
+      text-align: center;
+
+      color: ${(props) => props.theme.textPrimary};
+    }
   }
 
   @media (min-width: 767px) {
@@ -54,6 +77,22 @@ export const BoxTitle = styled.div`
 
 export const BoxParagraph = styled.div`
   @media (min-width: 320px) {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    & > p {
+      font-size: 10pt;
+      font-weight: bold;
+
+      text-align: center;
+
+      color: ${(props) => props.theme.textPrimary};
+    }
   }
 
   @media (min-width: 767px) {
