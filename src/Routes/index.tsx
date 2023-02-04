@@ -47,9 +47,4 @@ export const router = createBrowserRouter([
     element: <P.SuggestionsPage />,
     errorElement: <P.ErrorPage />,
   },
-  {
-    path: "/contribute",
-    element: <P.ContributePage />,
-    errorElement: <P.ErrorPage />,
-  },
 ]);

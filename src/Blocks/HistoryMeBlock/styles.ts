@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.section`
   @media (min-width: 320px) {
     width: 100vw;
-    height: 130rem;
+    height: 200rem;
 
     display: flex;
     flex-direction: column;
