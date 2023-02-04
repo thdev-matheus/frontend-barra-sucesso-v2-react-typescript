@@ -31,23 +31,23 @@ export const HeaderBlock = () => {
                 goTo("/");
               }}
             >
-              <a href="#home">Home</a>
+              Home
             </li>
             <li
               onClick={() => {
                 toggleIsOpen();
-                goTo("/");
+                goTo("/about-me");
               }}
             >
-              <a href="#aboutMe">Sobre Mim</a>
+              Sobre Mim
             </li>
             <li
               onClick={() => {
                 toggleIsOpen();
-                goTo("/");
+                goTo("/about-app");
               }}
             >
-              <a href="#aboutApp">Sobre o App</a>
+              Sobre o App
             </li>
             <li
               onClick={() => {
@@ -100,15 +100,9 @@ export const HeaderBlock = () => {
         </S.BoxLogo>
 
         <S.BoxMenuDesktop>
-          <li onClick={() => goTo("/")}>
-            <a href="#home">Home</a>
-          </li>
-          <li onClick={() => goTo("/")}>
-            <a href="#aboutMe">Sobre Mim</a>
-          </li>
-          <li onClick={() => goTo("/")}>
-            <a href="#aboutApp">Sobre o App</a>
-          </li>
+          <li onClick={() => goTo("/")}>Home</li>
+          <li onClick={() => goTo("/about-me")}>Sobre Mim</li>
+          <li onClick={() => goTo("/about-app")}>Sobre o App</li>
           <li onClick={() => goTo("/")}>
             <a href="#contact">Contato</a>
           </li>
