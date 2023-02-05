@@ -34,12 +34,14 @@ export const router = createBrowserRouter([
   },
   {
     path: "/devs-hall",
-    element: <P.DevsHallPage />,
+    element: <P.ErrorPage />,
+    // element: <P.DevsHallPage />,
     errorElement: <P.ErrorPage />,
   },
   {
     path: "/instructors-hall",
-    element: <P.InstructorsHallPage />,
+    element: <P.ErrorPage />,
+    // element: <P.InstructorsHallPage />,
     errorElement: <P.ErrorPage />,
   },
   {
