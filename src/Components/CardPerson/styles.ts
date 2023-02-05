@@ -44,6 +44,8 @@ export const BoxImg = styled.div`
   :hover {
     transform: scale(1.3) rotate(5deg);
 
+    border-radius: 50% 35% 60% 40%;
+
     transition: 2s;
   }
 `;
