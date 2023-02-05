@@ -34,8 +34,8 @@ export const router = createBrowserRouter([
   },
   {
     path: "/devs-hall",
-    element: <P.ErrorPage />,
-    // element: <P.DevsHallPage />,
+    // element: <P.ErrorPage />,
+    element: <P.DevsHallPage />,
     errorElement: <P.ErrorPage />,
   },
   {

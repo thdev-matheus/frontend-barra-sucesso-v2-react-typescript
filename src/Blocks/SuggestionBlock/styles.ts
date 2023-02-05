@@ -122,7 +122,7 @@ export const BoxSend = styled.div`
     display: flex;
     justify-content: flex-end;
 
-    & > svg {
+    & > a > svg {
       width: 35px;
       height: 35px;
 
@@ -152,7 +152,7 @@ export const BoxSend = styled.div`
   }
 
   @media (min-width: 767px) {
-    & > svg {
+    & > a > svg {
       width: 50px;
       height: 50px;
 
