@@ -9,22 +9,6 @@ import { toast } from "react-toastify";
 export const SuggestionBlock = () => {
   const [text, setText] = useState<string>("");
 
-  const handleMailTo = async () => {
-    if (text !== "") {
-      setText("");
-
-      window.location.href = `mailto:matheusth.dev@gmail.com?subject=Sugestão Para o /Sucesso&body=${text.replace(
-        /\n/g,
-        " "
-      )}`;
-    } else {
-      toast.error("Preencha todos os dados", {
-        icon: "🦆🔴",
-        autoClose: 3000,
-      });
-    }
-  };
-
   return (
     <S.Container id="homeSuggestions">
       <S.BoxContact>
@@ -78,9 +62,26 @@ export const SuggestionBlock = () => {
           onChange={(e) => setText(e.target.value)}
           height="100%"
         />
-        <S.BoxSend>
-          <IoMdSend title="Enviar" onClick={handleMailTo} />
-        </S.BoxSend>
+        {text && (
+          <S.BoxSend>
+            <a
+              href={`mailto:matheusth.dev@gmail.com?subject=Sugestão Para o /Sucesso&body=${text.replace(
+                /\n/g,
+                " "
+              )}`}
+            >
+              <IoMdSend
+                title="Enviar"
+                // onClick={() =>
+                //   toast.success("Obrigado pela sua sugestão", {
+                //     icon: "🦆🟢",
+                //     autoClose: 3000,
+                //   })
+                // }
+              />
+            </a>
+          </S.BoxSend>
+        )}
       </S.BoxMail>
     </S.Container>
   );
