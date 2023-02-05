@@ -7,7 +7,7 @@ export const myDevs: T.IPerson[] = [
     linkedin: "https://www.linkedin.com/in/menezes-dev/",
   },
   {
-    img: "https://i.ibb.co/XJWR21B/fernando-henrique.jpg",
+    img: "https://files.slack.com/files-pri/TQZR39SET-F04NGCX1A9X/perfillinkedin.jpg",
     name: "Fernando Henrique",
     linkedin: "https://www.linkedin.com/in/fernando-henrique-sousa-teixeira/",
   },
