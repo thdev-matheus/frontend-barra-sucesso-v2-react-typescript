@@ -18,12 +18,6 @@ export const Container = styled.section`
 
     padding: 2rem;
   }
-
-  @media (min-width: 1440px) {
-  }
-
-  @media (min-width: 1900px) {
-  }
 `;
 
 export const BoxTitle = styled.div`
@@ -61,14 +55,29 @@ export const BoxTitle = styled.div`
     & > span {
       font-size: 10pt;
 
-      color: ${(props) => props.theme.success};
+      color: ${(props) => props.theme.error};
     }
   }
 
-  @media (min-width: 1440px) {
-  }
-
   @media (min-width: 1900px) {
+    width: 60%;
+
+    gap: 1.5rem;
+
+    margin-bottom: 3rem;
+
+    & > h1 {
+      font-size: 40pt;
+    }
+
+    & > p {
+      font-size: 18pt;
+      line-height: 2rem;
+    }
+
+    & > span {
+      font-size: 16pt;
+    }
   }
 `;
 
@@ -80,7 +89,7 @@ export const BoxCards = styled.div`
   }
 
   @media (min-width: 1024px) {
-    width: 80%;
+    width: 60%;
 
     display: flex;
     flex-wrap: wrap;
@@ -88,13 +97,12 @@ export const BoxCards = styled.div`
     justify-content: center;
     align-items: center;
     gap: 2rem;
-
-    border: 1px solid magenta;
   }
 
   @media (min-width: 1440px) {
   }
 
   @media (min-width: 1900px) {
+    gap: 3rem;
   }
 `;

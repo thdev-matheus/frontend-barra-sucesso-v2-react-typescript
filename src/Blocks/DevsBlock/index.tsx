@@ -11,7 +11,9 @@ export const DevsBlock = () => {
         <p>
           Aqqui você confere todos os devs que eu tive a honra de acompanhar
           como monitor. Cada um com sua personalidade e características que
-          qualquer squad seria muito feliz em ter.
+          qualquer squad seria muito feliz em ter. Para mim são pessoas por
+          demais especiais que passaram pela minha vida e deixaram uma marca
+          que, como desenvolvedor e pessoa, farei questão de lembrar.
         </p>
         <span>
           A medida que me forem autorizando, estarei pondo os demais nomes dos
