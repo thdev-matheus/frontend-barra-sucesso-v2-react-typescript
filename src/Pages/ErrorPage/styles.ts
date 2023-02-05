@@ -2,19 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
     width: 100vw;
     height: 100vh;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
 
     & > img {
-      width: 18rem;
+      width: 70%;
 
       transition: 0.5s;
 
@@ -26,20 +24,20 @@ export const Container = styled.section`
     }
 
     & > div {
-      width: 40%;
+      width: 85%;
 
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       gap: 0.5rem;
 
-      text-align: left;
+      text-align: center;
 
       color: ${(props) => props.theme.textPrimary};
 
       & > h2 {
-        font-size: 18pt;
+        font-size: 16pt;
         font-weight: bold;
       }
 
@@ -64,6 +62,26 @@ export const Container = styled.section`
           animation-play-state: running;
           color: ${(props) => props.theme.primary};
         }
+      }
+    }
+  }
+
+  @media (min-width: 767px) {
+    flex-direction: row;
+
+    & > img {
+      width: 18rem;
+    }
+
+    & > div {
+      width: 40%;
+
+      align-items: flex-start;
+
+      text-align: left;
+
+      & > h2 {
+        font-size: 18pt;
       }
     }
   }
