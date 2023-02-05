@@ -72,9 +72,15 @@ export const Container = styled.section`
   }
 
   @media (min-width: 1440px) {
-  }
+    & > div {
+      & > h2 {
+        font-size: 30pt;
+      }
 
-  @media (min-width: 1900px) {
+      & > span {
+        font-size: 22pt;
+      }
+    }
   }
 
   @keyframes pulse {
