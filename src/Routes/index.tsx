@@ -40,8 +40,8 @@ export const router = createBrowserRouter([
   },
   {
     path: "/instructors-hall",
-    element: <P.ErrorPage />,
-    // element: <P.InstructorsHallPage />,
+    // element: <P.ErrorPage />,
+    element: <P.InstructorsHallPage />,
     errorElement: <P.ErrorPage />,
   },
   {

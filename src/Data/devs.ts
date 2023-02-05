@@ -7,9 +7,9 @@ export const myDevs: T.IPerson[] = [
     linkedin: "https://www.linkedin.com/in/everton-da-silva-vieira/",
   },
   {
-    img: "https://ca.slack-edge.com/TQZR39SET-U038986B2N8-6db336caa255-512",
-    name: "Tainá Tenório",
-    linkedin: "https://www.linkedin.com/in/taina-tenorio/",
+    img: "https://i.ibb.co/2Wjd82N/fernando-henrique.jpg",
+    name: "Fernando Henrique",
+    linkedin: "https://www.linkedin.com/in/fernando-henrique-sousa-teixeira/",
   },
   {
     img: "https://i.ibb.co/7g6PHH0/matheus-menezes.png",
@@ -17,9 +17,9 @@ export const myDevs: T.IPerson[] = [
     linkedin: "https://www.linkedin.com/in/menezes-dev/",
   },
   {
-    img: "https://files.slack.com/files-pri/TQZR39SET-F04NGCX1A9X/perfillinkedin.jpg",
-    name: "Fernando Henrique",
-    linkedin: "https://www.linkedin.com/in/fernando-henrique-sousa-teixeira/",
+    img: "https://ca.slack-edge.com/TQZR39SET-U038986B2N8-6db336caa255-512",
+    name: "Tainá Tenório",
+    linkedin: "https://www.linkedin.com/in/taina-tenorio/",
   },
 ];
 

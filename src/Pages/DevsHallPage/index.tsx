@@ -1,7 +1,13 @@
+import * as S from "./styles";
+import * as B from "../../Blocks";
+
 export const DevsHallPage = () => {
   return (
-    <>
-      <h1>DevsHallPage</h1>
-    </>
+    <S.Container>
+      <B.HeaderBlock />
+      <B.DevsBlock />
+      <B.FooterBlock identifierTo="#homeDevs" />
+      <B.CreditBlock />
+    </S.Container>
   );
 };

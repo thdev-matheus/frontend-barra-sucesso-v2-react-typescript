@@ -63,7 +63,7 @@ export const FooterBlock = ({ identifierTo }: T.IFooterProps) => {
         <h2>Links Úteis</h2>
         <S.Links>
           <li onClick={() => goTo("/devs-hall")}>Hall de devs</li>
-          <li onClick={() => goTo("/instructor-hall")}>Hall de instrutores</li>
+          <li onClick={() => goTo("/instructors-hall")}>Hall de instrutores</li>
           <li onClick={() => goTo("/suggestions")}>Sugestões</li>
         </S.Links>
       </S.BoxLinks>
