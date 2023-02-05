@@ -111,9 +111,9 @@ export const BoxCards = styled.div`
   }
 
   @media (min-width: 1024px) {
-    width: 60%;
+    width: 80%;
 
-    gap: 2rem;
+    gap: 2rem 3rem;
   }
 
   @media (min-width: 1900px) {
