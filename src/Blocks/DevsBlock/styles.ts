@@ -5,9 +5,6 @@ export const Container = styled.section`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100%;
 
     display: flex;
@@ -25,9 +22,6 @@ export const BoxTitle = styled.div`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 80%;
 
     display: flex;
@@ -86,20 +80,20 @@ export const BoxCards = styled.div`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
-    width: 60%;
+    width: 80%;
 
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 2rem 4rem;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1024px) {
+    width: 60%;
+
+    gap: 2rem;
   }
 
   @media (min-width: 1900px) {
