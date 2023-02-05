@@ -2,45 +2,34 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   @media (min-width: 320px) {
+    width: 90vw;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem 0 2rem;
+
+    scroll-margin-top: 5rem;
   }
 
   @media (min-width: 767px) {
     width: 80vw;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
 
     padding: 3rem 0;
-
-    scroll-margin-top: 5rem;
   }
 
   @media (min-width: 1024px) {
-    width: 80vw;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
-
     padding: 1rem 0 3rem;
-
-    scroll-margin-top: 5rem;
   }
 `;
 
 export const BoxContact = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-    width: 80%;
+    width: 100%;
     height: 10rem;
 
     display: flex;
@@ -50,47 +39,40 @@ export const BoxContact = styled.div`
     gap: 2rem;
 
     & > h2 {
-      font-size: 20pt;
+      font-size: 16pt;
       text-align: center;
 
       color: ${(props) => props.theme.textPrimary};
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 767px) {
     width: 80%;
-    height: 10rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
 
     & > h2 {
-      font-size: 25pt;
-      text-align: center;
+      font-size: 20pt;
+    }
+  }
 
-      color: ${(props) => props.theme.textPrimary};
+  @media (min-width: 1024px) {
+    & > h2 {
+      font-size: 25pt;
     }
   }
 `;
 
 export const BoxSocial = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
     width: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 
     & > a > svg {
-      width: 45px;
-      height: 45px;
+      width: 30px;
+      height: 30px;
 
       cursor: pointer;
 
@@ -104,63 +86,36 @@ export const BoxSocial = styled.div`
     }
   }
 
-  @media (min-width: 1024px) {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @media (min-width: 767px) {
     gap: 2rem;
 
     & > a > svg {
       width: 45px;
       height: 45px;
-
-      cursor: pointer;
-
-      transition: 0.3s;
-
-      :hover {
-        transform: scale(1.2) rotate(15deg);
-
-        transition: 1.5s;
-      }
     }
   }
 `;
 
 export const BoxMail = styled.form`
   @media (min-width: 320px) {
+    width: 90%;
+    height: 18rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
   }
 
   @media (min-width: 767px) {
     width: 80%;
     height: 20rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  @media (min-width: 1024px) {
-    width: 80%;
-    height: 20rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
   }
 `;
 
 export const BoxSend = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
     width: 100%;
     height: 0;
 
@@ -168,12 +123,12 @@ export const BoxSend = styled.div`
     justify-content: flex-end;
 
     & > svg {
-      width: 50px;
-      height: 50px;
+      width: 35px;
+      height: 35px;
 
       position: relative;
-      bottom: 90px;
-      right: 30px;
+      bottom: 70px;
+      right: 15px;
 
       color: ${(props) => props.theme.tertiary};
 
@@ -196,39 +151,13 @@ export const BoxSend = styled.div`
     }
   }
 
-  @media (min-width: 1024px) {
-    width: 100%;
-    height: 0;
-
-    display: flex;
-    justify-content: flex-end;
-
+  @media (min-width: 767px) {
     & > svg {
       width: 50px;
       height: 50px;
 
-      position: relative;
       bottom: 90px;
       right: 30px;
-
-      color: ${(props) => props.theme.tertiary};
-
-      cursor: pointer;
-
-      transition: 0.5s;
-
-      animation-name: shake;
-      animation-duration: 3s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-
-      :hover {
-        animation-play-state: paused;
-
-        transition: 1.5s;
-
-        color: ${(props) => props.theme.primary};
-      }
     }
   }
 
