@@ -6,7 +6,6 @@ import { AboutAppPage } from "./AboutAppPage";
 import { DevsHallPage } from "./DevsHallPage";
 import { InstructorsHallPage } from "./InstructorsHallPage";
 import { SuggestionsPage } from "./SuggestionPage";
-import { ContributePage } from "./ContributePage";
 
 import { ErrorPage } from "./ErrorPage";
 
@@ -18,7 +17,6 @@ export {
   AboutAppPage,
   ErrorPage,
   DevsHallPage,
-  SuggestionsPage,
-  ContributePage,
   InstructorsHallPage,
+  SuggestionsPage,
 };

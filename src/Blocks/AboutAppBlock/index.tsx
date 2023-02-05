@@ -22,9 +22,9 @@ export const AboutAppBlock = () => {
         <motion.div>
           <p>
             A ídeia de criar uma aplicação que pudesse ajudar os devs a
-            elaborarem bons /perguntas veio quando eu iniciei o M3 na Kenzie
-            Academy Brasil. Na época eu era monitor do M2 e percebi que alguns
-            devs ao pedirem ajudar, não sabiam explicar ao certo o que
+            elaborarem bons /perguntas veio quando eu estava na metade do M3 na
+            Kenzie Academy Brasil. Na época eu era monitor do M2 e percebi que
+            alguns devs, ao pedirem ajuda, não sabiam explicar ao certo o que
             precisavam saber.
           </p>
           <p>

@@ -1,4 +1,3 @@
-import Dropdown from "react-bootstrap/Dropdown";
 import * as T from "./types";
 import * as S from "./styles";
 import { useState } from "react";

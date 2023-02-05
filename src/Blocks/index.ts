@@ -9,6 +9,9 @@ import { FormBlock } from "./FormBlock";
 import { SlashSuccessBlock } from "./SlashSuccessBlock";
 
 import { HistoryAppBlock } from "./HistoryAppBlock";
+import { HistoryMeBlock } from "./HistoryMeBlock";
+
+import { SuggestionBlock } from "./SuggestionBlock";
 
 export {
   HeaderBlock,
@@ -21,4 +24,6 @@ export {
   FormBlock,
   SlashSuccessBlock,
   HistoryAppBlock,
+  HistoryMeBlock,
+  SuggestionBlock,
 };

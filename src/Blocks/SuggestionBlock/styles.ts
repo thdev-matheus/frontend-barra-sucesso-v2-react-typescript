@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   @media (min-width: 320px) {
-    width: 100vw;
+    width: 90vw;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -10,106 +11,110 @@ export const Container = styled.section`
     align-items: center;
     gap: 1rem;
 
-    padding: 0.5rem 2% 2rem;
+    padding: 1rem 0 2rem;
+
+    scroll-margin-top: 5rem;
   }
 
   @media (min-width: 767px) {
-    padding: 3rem 10%;
+    width: 80vw;
+
+    padding: 3rem 0;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1rem 0 3rem;
   }
 `;
 
-export const BoxDescriptions = styled.div`
+export const BoxContact = styled.div`
   @media (min-width: 320px) {
-    width: 90%;
+    width: 100%;
+    height: 10rem;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-
-    text-align: center;
-
-    margin-top: 0.5rem;
+    gap: 2rem;
 
     & > h2 {
-      margin-bottom: 1rem;
-
-      font-size: 25pt;
-      font-weight: bold;
+      font-size: 16pt;
+      text-align: center;
 
       color: ${(props) => props.theme.textPrimary};
-    }
-
-    & > p {
-      font-size: 10pt;
-      font-weight: bold;
-
-      color: ${(props) => props.theme.textPrimary};
-
-      & > span {
-        color: ${(props) => props.theme.secondary};
-
-        cursor: pointer;
-
-        transition: 0.5s;
-
-        :hover {
-          color: ${(props) => props.theme.tertiary};
-
-          transition: 1.5s;
-        }
-      }
     }
   }
 
   @media (min-width: 767px) {
     width: 80%;
 
-    margin-top: 2rem;
+    & > h2 {
+      font-size: 20pt;
+    }
+  }
 
-    & > p {
-      font-size: 12pt;
+  @media (min-width: 1024px) {
+    & > h2 {
+      font-size: 25pt;
     }
   }
 `;
 
-export const BoxTextCopy = styled.div`
+export const BoxSocial = styled.div`
+  @media (min-width: 320px) {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    & > a > svg {
+      width: 30px;
+      height: 30px;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+
+      :hover {
+        transform: scale(1.2) rotate(15deg);
+
+        transition: 1.5s;
+      }
+    }
+  }
+
+  @media (min-width: 767px) {
+    gap: 2rem;
+
+    & > a > svg {
+      width: 45px;
+      height: 45px;
+    }
+  }
+`;
+
+export const BoxMail = styled.form`
   @media (min-width: 320px) {
     width: 90%;
+    height: 18rem;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    & > .editor {
-      width: 100%;
-
-      margin-bottom: 1rem;
-
-      border-radius: 0.8rem;
-
-      font-weight: bold;
-
-      box-shadow: 2px 2px 5px 0 ${(props) => props.theme.gray};
-
-      background-color: ${(props) => props.theme.backgroundTertiary};
-      color: ${(props) => props.theme.white};
-      transform: translateY(20px);
-    }
+    gap: 1rem;
   }
 
   @media (min-width: 767px) {
-    width: 100%;
-
-    & > .editor {
-      width: 100%;
-    }
+    width: 80%;
+    height: 20rem;
   }
 `;
 
-export const BoxCopy = styled.div`
+export const BoxSend = styled.div`
   @media (min-width: 320px) {
     width: 100%;
     height: 0;
@@ -117,14 +122,13 @@ export const BoxCopy = styled.div`
     display: flex;
     justify-content: flex-end;
 
-    & > a > svg {
+    & > svg {
       width: 35px;
       height: 35px;
 
       position: relative;
+      bottom: 70px;
       right: 15px;
-      bottom: -35px;
-      z-index: 8999;
 
       color: ${(props) => props.theme.tertiary};
 
@@ -144,6 +148,16 @@ export const BoxCopy = styled.div`
 
         color: ${(props) => props.theme.primary};
       }
+    }
+  }
+
+  @media (min-width: 767px) {
+    & > svg {
+      width: 50px;
+      height: 50px;
+
+      bottom: 90px;
+      right: 30px;
     }
   }
 

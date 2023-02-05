@@ -1,4 +1,6 @@
 import * as S from "./styles";
+import * as T from "./types";
+
 import {
   FiInstagram,
   FiTwitter,
@@ -7,8 +9,9 @@ import {
   FiArrowUpCircle,
 } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 
-export const FooterBlock = () => {
+export const FooterBlock = ({ identifierTo }: T.IFooterProps) => {
   const navigate = useNavigate();
 
   const goTo = (path: string) => navigate(path);
@@ -46,6 +49,13 @@ export const FooterBlock = () => {
           >
             <FiGithub color="#000" />
           </a>
+          <a
+            href="https://wa.me/5581996336588"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaWhatsapp color="#4cd964" />
+          </a>
         </S.BoxIcons>
       </S.BoxSocial>
 
@@ -55,22 +65,15 @@ export const FooterBlock = () => {
           <li onClick={() => goTo("/devs-hall")}>Hall de devs</li>
           <li onClick={() => goTo("/instructor-hall")}>Hall de instrutores</li>
           <li onClick={() => goTo("/suggestions")}>Sugestões</li>
-          <li onClick={() => goTo("/contribute")}>Contribua</li>
         </S.Links>
       </S.BoxLinks>
 
       <S.BoxLinks>
         <h2>Mapa da página</h2>
         <S.Links>
-          <li onClick={() => goTo("/")}>
-            <a href="#home">Home</a>
-          </li>
-          <li onClick={() => goTo("/")}>
-            <a href="#aboutMe">Sobre mim</a>
-          </li>
-          <li onClick={() => goTo("/")}>
-            <a href="#aboutApp">Sobre o app</a>
-          </li>
+          <li onClick={() => goTo("/")}>Home</li>
+          <li onClick={() => goTo("/about-me")}>Sobre mim</li>
+          <li onClick={() => goTo("/about-app")}>Sobre o app</li>
           <li onClick={() => goTo("/")}>
             <a href="#contact">Contato</a>
           </li>
@@ -78,7 +81,7 @@ export const FooterBlock = () => {
       </S.BoxLinks>
 
       <S.BoxButton>
-        <a href="#home">
+        <a href={identifierTo}>
           <div>
             <FiArrowUpCircle />
           </div>
