@@ -27,6 +27,8 @@ export const Container = styled.section<T.IContainerProps>`
       & > div {
         transition: 0.5s;
 
+        cursor: pointer;
+
         :hover {
           transform: scale(1.5) rotate(30deg);
 
