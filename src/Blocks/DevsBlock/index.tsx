@@ -5,7 +5,7 @@ import { myDevs } from "../../Data/devs";
 
 export const DevsBlock = () => {
   return (
-    <S.Container>
+    <S.Container id="homeDevs">
       <S.BoxTitle>
         <h1>Hall de Devs</h1>
         <p>

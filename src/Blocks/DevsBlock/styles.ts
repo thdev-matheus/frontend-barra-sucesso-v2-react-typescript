@@ -2,9 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
     width: 100%;
 
     display: flex;
@@ -13,16 +10,19 @@ export const Container = styled.section`
     align-items: center;
     gap: 2rem;
 
+    padding: 1rem;
+
+    scroll-margin-top: 5rem;
+  }
+
+  @media (min-width: 767px) {
     padding: 2rem;
   }
 `;
 
 export const BoxTitle = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-    width: 80%;
+    width: 90%;
 
     display: flex;
     flex-direction: column;
@@ -33,23 +33,42 @@ export const BoxTitle = styled.div`
     text-align: center;
 
     & > h1 {
-      font-size: 30pt;
+      font-size: 25pt;
       font-weight: bold;
 
       color: ${(props) => props.theme.textPrimary};
     }
 
     & > p {
-      font-size: 12pt;
-      line-height: 1.2rem;
+      font-size: 10pt;
+      line-height: 1rem;
 
       color: ${(props) => props.theme.textPrimary};
     }
 
     & > span {
-      font-size: 10pt;
+      font-size: 8pt;
+
+      line-height: 1rem;
 
       color: ${(props) => props.theme.error};
+    }
+  }
+
+  @media (min-width: 767px) {
+    width: 80%;
+
+    & > h1 {
+      font-size: 30pt;
+    }
+
+    & > p {
+      font-size: 12pt;
+      line-height: 1.2rem;
+    }
+
+    & > span {
+      font-size: 10pt;
     }
   }
 
@@ -77,10 +96,7 @@ export const BoxTitle = styled.div`
 
 export const BoxCards = styled.div`
   @media (min-width: 320px) {
-  }
-
-  @media (min-width: 767px) {
-    width: 80%;
+    width: 90%;
 
     display: flex;
     flex-wrap: wrap;
@@ -88,6 +104,10 @@ export const BoxCards = styled.div`
     justify-content: center;
     align-items: center;
     gap: 2rem 4rem;
+  }
+
+  @media (min-width: 767px) {
+    width: 80%;
   }
 
   @media (min-width: 1024px) {
