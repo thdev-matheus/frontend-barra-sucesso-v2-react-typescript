@@ -5,9 +5,6 @@ export const Container = styled.section`
   }
 
   @media (min-width: 767px) {
-  }
-
-  @media (min-width: 1024px) {
     width: 100vw;
     height: 100vh;
 
@@ -17,7 +14,7 @@ export const Container = styled.section`
     gap: 1rem;
 
     & > img {
-      width: 25rem;
+      width: 18rem;
 
       transition: 0.5s;
 
@@ -42,12 +39,12 @@ export const Container = styled.section`
       color: ${(props) => props.theme.textPrimary};
 
       & > h2 {
-        font-size: 25pt;
+        font-size: 18pt;
         font-weight: bold;
       }
 
       & > span {
-        font-size: 16pt;
+        font-size: 14pt;
         font-weight: bold;
 
         margin-top: 1.5rem;
@@ -67,6 +64,22 @@ export const Container = styled.section`
           animation-play-state: running;
           color: ${(props) => props.theme.primary};
         }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & > img {
+      width: 25rem;
+    }
+
+    & > div {
+      & > h2 {
+        font-size: 25pt;
+      }
+
+      & > span {
+        font-size: 16pt;
       }
     }
   }
