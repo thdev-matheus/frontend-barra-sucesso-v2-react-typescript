@@ -117,7 +117,10 @@ export const FormBlock = () => {
     data.code = code;
     data.language = activeOption;
 
-    toast.success("Sucesso");
+    toast.success("Sucesso", {
+      icon: "🦆🟢",
+      autoClose: 3000,
+    });
 
     editSlashQuestion(data);
 

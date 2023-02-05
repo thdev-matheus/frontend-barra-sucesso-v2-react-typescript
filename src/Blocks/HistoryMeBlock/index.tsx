@@ -1,10 +1,6 @@
 import * as S from "./styles";
-import * as C from "../../Components";
-import { useMediaQuery } from "../../Contexts";
 
 export const HistoryMeBlock = () => {
-  const { widthScreen } = useMediaQuery();
-
   return (
     <S.Container id="homeAboutMe">
       <S.BoxTitle>

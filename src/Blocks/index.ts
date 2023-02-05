@@ -11,6 +11,8 @@ import { SlashSuccessBlock } from "./SlashSuccessBlock";
 import { HistoryAppBlock } from "./HistoryAppBlock";
 import { HistoryMeBlock } from "./HistoryMeBlock";
 
+import { SuggestionBlock } from "./SuggestionBlock";
+
 export {
   HeaderBlock,
   WelcomeBlock,
@@ -23,4 +25,5 @@ export {
   SlashSuccessBlock,
   HistoryAppBlock,
   HistoryMeBlock,
+  SuggestionBlock,
 };

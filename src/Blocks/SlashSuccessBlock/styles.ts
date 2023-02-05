@@ -117,7 +117,7 @@ export const BoxCopy = styled.div`
     display: flex;
     justify-content: flex-end;
 
-    & > svg {
+    & > a > svg {
       width: 35px;
       height: 35px;
 
@@ -149,19 +149,19 @@ export const BoxCopy = styled.div`
 
   @keyframes shake {
     15% {
-      transform: rotate(15deg);
+      transform: rotate(-15deg);
     }
 
     17% {
-      transform: rotate(-15deg);
-    }
-
-    19% {
       transform: rotate(15deg);
     }
 
-    21% {
+    19% {
       transform: rotate(-15deg);
+    }
+
+    21% {
+      transform: rotate(15deg);
     }
 
     23% {
@@ -173,7 +173,7 @@ export const BoxCopy = styled.div`
     }
 
     27% {
-      transform: rotate(15deg);
+      transform: rotate(-15deg);
     }
 
     29% {
@@ -181,7 +181,7 @@ export const BoxCopy = styled.div`
     }
 
     31% {
-      transform: rotate(15deg);
+      transform: rotate(-15deg);
     }
 
     33% {
