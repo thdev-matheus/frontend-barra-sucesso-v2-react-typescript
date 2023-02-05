@@ -13,6 +13,8 @@ import { HistoryMeBlock } from "./HistoryMeBlock";
 
 import { SuggestionBlock } from "./SuggestionBlock";
 
+import { DevsBlock } from "./DevsBlock";
+
 export {
   HeaderBlock,
   WelcomeBlock,
@@ -26,4 +28,5 @@ export {
   HistoryAppBlock,
   HistoryMeBlock,
   SuggestionBlock,
+  DevsBlock,
 };
