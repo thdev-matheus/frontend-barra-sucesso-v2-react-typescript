@@ -14,6 +14,7 @@ import { HistoryMeBlock } from "./HistoryMeBlock";
 import { SuggestionBlock } from "./SuggestionBlock";
 
 import { DevsBlock } from "./DevsBlock";
+import { InstructorsBlock } from "./InstructorsBlock";
 
 export {
   HeaderBlock,
@@ -29,4 +30,5 @@ export {
   HistoryMeBlock,
   SuggestionBlock,
   DevsBlock,
+  InstructorsBlock,
 };
