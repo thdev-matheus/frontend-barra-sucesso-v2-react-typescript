@@ -4,7 +4,7 @@ import * as S from "./styles";
 import * as C from "../../Components";
 import { useState } from "react";
 import { IoMdSend } from "react-icons/io";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 export const SuggestionBlock = () => {
   const [text, setText] = useState<string>("");
