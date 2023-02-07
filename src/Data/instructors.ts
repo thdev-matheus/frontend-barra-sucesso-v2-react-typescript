@@ -61,11 +61,11 @@ export const MyInstructors: T.IPerson[] = [
     name: "Pedro Hasler",
     linkedin: "https://www.linkedin.com/in/pedrofhasler/",
   },
-  // {
-  //   img: "https://ca.slack-edge.com/TQZR39SET-U015QLLFS9Y-4aa517fcf9b5-512",
-  //   name: "Amanda Karoline",
-  //   linkedin: "https://www.linkedin.com/in/amanda-karoline-carolino/",
-  // },
+  {
+    img: "https://ca.slack-edge.com/TQZR39SET-U015QLLFS9Y-4aa517fcf9b5-512",
+    name: "Amanda Karoline",
+    linkedin: "https://www.linkedin.com/in/amanda-karoline-carolino/",
+  },
   {
     img: "https://ca.slack-edge.com/TQZR39SET-U01KQJACBFS-201bd59aca66-512",
     name: "Paulo Mello",
