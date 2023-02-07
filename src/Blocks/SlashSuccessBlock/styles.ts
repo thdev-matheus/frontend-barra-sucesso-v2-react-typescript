@@ -117,7 +117,7 @@ export const BoxCopy = styled.div`
     display: flex;
     justify-content: flex-end;
 
-    & > a > svg {
+    & > svg {
       width: 35px;
       height: 35px;
 

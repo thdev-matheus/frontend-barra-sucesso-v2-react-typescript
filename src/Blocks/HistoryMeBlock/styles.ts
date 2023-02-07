@@ -69,7 +69,7 @@ export const BoxParagraph = styled.div`
 
     & > p {
       font-size: 10pt;
-      font-weight: bold;
+      font-weight: normal;
 
       text-align: center;
 

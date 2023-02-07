@@ -21,11 +21,11 @@ export const MyInstructors: T.IPerson[] = [
     name: "Victor Augusto",
     linkedin: "https://www.linkedin.com/in/victor-augusto-lima/",
   },
-  // {
-  //   img: "https://ca.slack-edge.com/TQZR39SET-U02E99UMW22-83ee5d9116b6-512",
-  //   name: "Guilherme Preveda Milék",
-  //   linkedin: "https://www.linkedin.com/in/guilhermeprevedamilek/",
-  // },
+  {
+    img: "https://ca.slack-edge.com/TQZR39SET-U02E99UMW22-83ee5d9116b6-512",
+    name: "Guilherme Preveda Milék",
+    linkedin: "https://www.linkedin.com/in/guilhermeprevedamilek/",
+  },
   // {
   //   img: "https://ca.slack-edge.com/TQZR39SET-U03L96UCZ6H-d5b942663e19-512",
   //   name: "Gabriel Tsunoda",
@@ -66,11 +66,11 @@ export const MyInstructors: T.IPerson[] = [
   //   name: "Amanda Karoline",
   //   linkedin: "https://www.linkedin.com/in/amanda-karoline-carolino/",
   // },
-  // {
-  //   img: "https://ca.slack-edge.com/TQZR39SET-U01KQJACBFS-201bd59aca66-512",
-  //   name: "Paulo Mello",
-  //   linkedin: "https://www.linkedin.com/in/pauloraphaelmello/",
-  // },
+  {
+    img: "https://ca.slack-edge.com/TQZR39SET-U01KQJACBFS-201bd59aca66-512",
+    name: "Paulo Mello",
+    linkedin: "https://www.linkedin.com/in/pauloraphaelmello/",
+  },
 ];
 
 // {
