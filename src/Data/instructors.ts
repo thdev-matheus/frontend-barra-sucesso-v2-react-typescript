@@ -26,11 +26,11 @@ export const MyInstructors: T.IPerson[] = [
     name: "Guilherme Preveda Milék",
     linkedin: "https://www.linkedin.com/in/guilhermeprevedamilek/",
   },
-  // {
-  //   img: "https://ca.slack-edge.com/TQZR39SET-U03L96UCZ6H-d5b942663e19-512",
-  //   name: "Gabriel Tsunoda",
-  //   linkedin: "https://www.linkedin.com/in/tsunode/",
-  // },
+  {
+    img: "https://ca.slack-edge.com/TQZR39SET-U03L96UCZ6H-d5b942663e19-512",
+    name: "Gabriel Tsunoda",
+    linkedin: "https://www.linkedin.com/in/tsunode/",
+  },
   // {
   //   img: "https://ca.slack-edge.com/TQZR39SET-U01KCMKK9RC-6e1d56a5952a-512",
   //   name: "Wesley Matos",
