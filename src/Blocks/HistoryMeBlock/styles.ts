@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.section`
   @media (min-width: 320px) {
     width: 100vw;
-    height: 200rem;
+    /* height: 200rem; */
 
     display: flex;
     flex-direction: column;
@@ -17,15 +17,15 @@ export const Container = styled.section`
   }
 
   @media (min-width: 767px) {
-    height: 70rem;
+    /* height: 70rem; */
   }
 
   @media (min-width: 1024px) {
-    height: 95rem;
+    /* height: 95rem; */
   }
 
   @media (min-width: 1440px) {
-    height: 111rem;
+    /* height: 111rem; */
   }
 `;
 
