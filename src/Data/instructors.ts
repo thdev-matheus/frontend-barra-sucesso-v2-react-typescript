@@ -41,11 +41,11 @@ export const MyInstructors: T.IPerson[] = [
     name: "Fabio Junior",
     linkedin: "https://www.linkedin.com/in/fjrleao/",
   },
-  // {
-  //   img: "https://ca.slack-edge.com/TQZR39SET-U01D5FCB5J6-84134bc9bdac-512",
-  //   name: "Gustavo D. Mota",
-  //   linkedin: "https://www.linkedin.com/in/gustavo-dmota-dev/",
-  // },
+  {
+    img: "https://ca.slack-edge.com/TQZR39SET-U01D5FCB5J6-84134bc9bdac-512",
+    name: "Gustavo D. Mota",
+    linkedin: "https://www.linkedin.com/in/gustavo-dmota-dev/",
+  },
   {
     img: "https://ca.slack-edge.com/TQZR39SET-U0134856MTJ-49fe75f2296a-512",
     name: "Chrystian Rodolfo",
