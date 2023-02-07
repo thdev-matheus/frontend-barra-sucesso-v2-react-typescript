@@ -2,6 +2,27 @@ import * as T from "./types";
 
 export const myDevs: T.IPerson[] = [
   {
+    img: "https://ca.slack-edge.com/TQZR39SET-U0363SWFXC2-1eae1a82c383-512",
+    name: "Amon Fanticelli",
+    linkedin: "https://www.linkedin.com/in/amon-fanticelli/",
+  },
+  {
+    img: "https://ca.slack-edge.com/TQZR39SET-U0380H9SB18-93d1559a5d90-512",
+    name: "Arthur Ribeiro",
+    linkedin:
+      "https://www.linkedin.com/mwlite/in/arthur-ribeiro-gon%C3%A7alves",
+  },
+  {
+    img: "https://i.ibb.co/NsSSHWV/foto-perfil.jpg",
+    name: "Breno Almeida",
+    linkedin: "https://www.linkedin.com/in/breno-almeida-cardoso-32616114a/",
+  },
+  {
+    img: "https://i.ibb.co/VWCbcvV/Daniel-Lobato-de-Souza.jpg",
+    name: "Daniel Lobato",
+    linkedin: "https://www.linkedin.com/in/simplesmentedan/",
+  },
+  {
     img: "https://ca.slack-edge.com/TQZR39SET-U038986JDEY-c83c2bc4173f-512",
     name: "Everton Vieira",
     linkedin: "https://www.linkedin.com/in/everton-da-silva-vieira/",
@@ -15,6 +36,11 @@ export const myDevs: T.IPerson[] = [
     img: "https://i.ibb.co/nbSq9rf/hashirama-naiff.jpg",
     name: "Hashirama Naiff",
     linkedin: "https://www.linkedin.com/in/hashirama-naiff-042977235/",
+  },
+  {
+    img: "https://ca.slack-edge.com/TQZR39SET-U035L5117EG-d126388de06c-512",
+    name: "FreD Rook",
+    linkedin: "https://www.linkedin.com/in/fredericorook/",
   },
   {
     img: "https://ca.slack-edge.com/TQZR39SET-U037S9V1R3R-3dfdfb577b61-512",
@@ -37,6 +63,11 @@ export const myDevs: T.IPerson[] = [
     linkedin: "https://www.linkedin.com/in/natalia-cavicchioli/",
   },
   {
+    img: "https://ca.slack-edge.com/TQZR39SET-U035HS1M0AX-c386a3d118ad-512",
+    name: "Nicole Antunes",
+    linkedin: "https://www.linkedin.com/in/nicole-antunes-campos/",
+  },
+  {
     img: "https://avatars.githubusercontent.com/u/93023346?v=4",
     name: "Raphael Silva",
     linkedin: "https://www.linkedin.com/in/raphaelgloria/",
@@ -45,6 +76,11 @@ export const myDevs: T.IPerson[] = [
     img: "https://ca.slack-edge.com/TQZR39SET-U035P9K07P1-8c07055aaa93-512",
     name: "Roberto Jr",
     linkedin: "https://www.linkedin.com/in/robertojrdev/",
+  },
+  {
+    img: "https://i.ibb.co/b2yzJSX/sara-lins.jpg",
+    name: "Sara Lins",
+    linkedin: "https://www.linkedin.com/in/sara-lins-75803a217/",
   },
   {
     img: "https://ca.slack-edge.com/TQZR39SET-U02TFP86B1D-187952134e37-512",
