@@ -210,6 +210,11 @@ export const MenuMobile = styled.ul`
     & > li {
       list-style: none;
 
+      font-size: 12pt;
+      font-weight: bold;
+
+      color: ${(props) => props.theme.textPrimary};
+
       & > a {
         font-size: 12pt;
         font-weight: bold;
