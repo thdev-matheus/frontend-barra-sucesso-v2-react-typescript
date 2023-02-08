@@ -1,11 +1,11 @@
 import * as T from "./types";
 
 export const MyInstructors: T.IPerson[] = [
-  // {
-  //   img: "https://ca.slack-edge.com/TQZR39SET-U010237E2NM-3b1fad84b7a6-512",
-  //   name: "Tiago Ramos",
-  //   linkedin: "https://www.linkedin.com/in/tiago-ramos-alves/",
-  // },
+  {
+    img: "https://ca.slack-edge.com/TQZR39SET-U010237E2NM-3b1fad84b7a6-512",
+    name: "Tiago Ramos",
+    linkedin: "https://www.linkedin.com/in/tiago-ramos-alves/",
+  },
   // {
   //   img: "https://ca.slack-edge.com/TQZR39SET-U026XGCTNCW-34226426eaeb-512",
   //   name: "Pablo Adriano",
@@ -61,11 +61,11 @@ export const MyInstructors: T.IPerson[] = [
     name: "Pedro Hasler",
     linkedin: "https://www.linkedin.com/in/pedrofhasler/",
   },
-  // {
-  //   img: "https://ca.slack-edge.com/TQZR39SET-U015QLLFS9Y-4aa517fcf9b5-512",
-  //   name: "Amanda Karoline",
-  //   linkedin: "https://www.linkedin.com/in/amanda-karoline-carolino/",
-  // },
+  {
+    img: "https://ca.slack-edge.com/TQZR39SET-U015QLLFS9Y-4aa517fcf9b5-512",
+    name: "Amanda Karoline",
+    linkedin: "https://www.linkedin.com/in/amanda-karoline-carolino/",
+  },
   {
     img: "https://ca.slack-edge.com/TQZR39SET-U01KQJACBFS-201bd59aca66-512",
     name: "Paulo Mello",
