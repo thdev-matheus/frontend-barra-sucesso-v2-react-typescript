@@ -1,11 +1,11 @@
 import * as T from "./types";
 
 export const MyInstructors: T.IPerson[] = [
-  // {
-  //   img: "https://ca.slack-edge.com/TQZR39SET-U010237E2NM-3b1fad84b7a6-512",
-  //   name: "Tiago Ramos",
-  //   linkedin: "https://www.linkedin.com/in/tiago-ramos-alves/",
-  // },
+  {
+    img: "https://ca.slack-edge.com/TQZR39SET-U010237E2NM-3b1fad84b7a6-512",
+    name: "Tiago Ramos",
+    linkedin: "https://www.linkedin.com/in/tiago-ramos-alves/",
+  },
   // {
   //   img: "https://ca.slack-edge.com/TQZR39SET-U026XGCTNCW-34226426eaeb-512",
   //   name: "Pablo Adriano",
