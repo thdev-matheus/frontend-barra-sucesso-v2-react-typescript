@@ -6,11 +6,11 @@ export const MyInstructors: T.IPerson[] = [
     name: "Tiago Ramos",
     linkedin: "https://www.linkedin.com/in/tiago-ramos-alves/",
   },
-  // {
-  //   img: "https://ca.slack-edge.com/TQZR39SET-U026XGCTNCW-34226426eaeb-512",
-  //   name: "Pablo Adriano",
-  //   linkedin: "https://www.linkedin.com/in/pabloadrianomaximo/",
-  // },
+  {
+    img: "https://ca.slack-edge.com/TQZR39SET-U026XGCTNCW-34226426eaeb-512",
+    name: "Pablo Adriano",
+    linkedin: "https://www.linkedin.com/in/pabloadrianomaximo/",
+  },
   {
     img: "https://ca.slack-edge.com/TQZR39SET-U02DEJ2QKL1-71a1c411b7e7-512",
     name: "Rafael Jagochitz Bertoldo",
